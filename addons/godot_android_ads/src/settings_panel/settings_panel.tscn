@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://om7575nwqi2k"]
+
+[node name="settings_panel" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="."]
+offset_right = 540.0
+offset_bottom = 31.0
+text = "CLICK "
+
+[node name="Button2" type="Button" parent="."]
+offset_top = 35.0
+offset_right = 540.0
+offset_bottom = 66.0
+text = "CLICK "

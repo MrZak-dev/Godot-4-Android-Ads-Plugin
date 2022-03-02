@@ -1,0 +1,74 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "RefCounted",
+"class": &"FileHandler",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/file_handler/files_handler.gd"
+}, {
+"base": "Serializable",
+"class": &"Provider",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/serializables/provider.gd"
+}, {
+"base": "Node",
+"class": &"Serializable",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/serializables/serializable.gd"
+}, {
+"base": "Serializable",
+"class": &"Settings",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/serializables/settings.gd"
+}, {
+"base": "Node",
+"class": &"SettingsExporter",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/settings_import_export/settings_exporter.gd"
+}, {
+"base": "Node",
+"class": &"SettingsImporter",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/settings_import_export/settings_importer.gd"
+}]
+_global_script_class_icons={
+"FileHandler": "",
+"Provider": "",
+"Serializable": "",
+"Settings": "",
+"SettingsExporter": "",
+"SettingsImporter": ""
+}
+
+[application]
+
+config/name="Godot_Android_Ads_Plugin"
+run/main_scene="res://plugin_test_main.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Mobile")
+
+[autoload]
+
+AndroidAds="*res://addons/godot_android_ads/plugin_lib.gd"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[rendering]
+
+vulkan/rendering/back_end=1

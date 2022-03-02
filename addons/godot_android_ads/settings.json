@@ -1,0 +1,20 @@
+{
+	"@path": "res://addons/godot_android_ads/src/serializables/settings.gd",
+	"@subpath": null,
+	"mediation": false,
+	"os": "",
+	"providers": [
+		{
+			"app_id": "",
+			"banner_id": "",
+			"dependencies": [
+
+			],
+			"enabled": false,
+			"interstitial_id": "",
+			"provider_id": 0,
+			"rewarded_id": ""
+		}
+	],
+	"version": "1.0.0"
+}
