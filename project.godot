@@ -67,7 +67,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot_android_ads/plugin.cfg")
 
 [rendering]
 

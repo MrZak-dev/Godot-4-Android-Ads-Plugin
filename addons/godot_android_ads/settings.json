@@ -5,17 +5,24 @@
 	"os": "",
 	"providers": [
 		{
-			"@subpath":null, 
-			"@path": "res://addons/godot_android_ads/src/serializables/provider.gd"
+			"@path": "res://addons/godot_android_ads/src/serializables/provider.gd",
+			"@subpath": null,
 			"app_id": "",
-			"banner_ids": [],
+			"banner_ids": {
+
+			},
 			"dependencies": [
 
 			],
 			"enabled": false,
-			"interstitial_ids": {"default" :"default_interstitial_id" ,"home" :"home_interstitial_id"},
+			"interstitial_ids": {
+				"default": "default_interstitial_id",
+				"home": "home interstitial"
+			},
 			"provider_id": 0,
-			"rewarded_ids": []
+			"rewarded_ids": {
+
+			}
 		}
 	],
 	"version": "1.0.0"

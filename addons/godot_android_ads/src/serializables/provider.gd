@@ -12,6 +12,8 @@ var banner_ids : Dictionary
 
 func serialize() -> Dictionary:
 	var provider_data : Dictionary = {
+		"@subpath":null,
+		"@path": _get_class_path(),
 		"provider_id" : provider_id,
 		"enabled" : enabled,
 		"dependencies" : _get_dependencies(),
@@ -24,6 +26,11 @@ func serialize() -> Dictionary:
 	return provider_data
 
 
+static func deserialize(provider_data:Dictionary) -> Serializable:
+	var provider : Provider = dict2inst(provider_data)
+	return provider
+
+
 func _get_dependencies() -> Array[String]:
 	var dependencies_data : Array[String]
 	for dependency in dependencies:
@@ -32,3 +39,5 @@ func _get_dependencies() -> Array[String]:
 	return dependencies_data
 
 
+func _get_class_path() -> String:
+	return "res://addons/godot_android_ads/src/serializables/provider.gd"
