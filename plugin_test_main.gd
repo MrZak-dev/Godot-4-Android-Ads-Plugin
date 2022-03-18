@@ -3,14 +3,11 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
-	var settings : Settings = Settings.new()
-	settings.providers.append(Provider.new())
-	settings.version ="1.0.0"
-	SettingsExporter.export(settings)
 	
-	var imported : Settings = SettingsImporter.import()
+	var imported_settings : Settings = SettingsImporter.import()
+	imported_settings.providers[0].interstitial_ids.home = "edited"
 	
-	print(imported.version)
+	SettingsExporter.export(imported_settings)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

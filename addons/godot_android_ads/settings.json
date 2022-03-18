@@ -5,15 +5,17 @@
 	"os": "",
 	"providers": [
 		{
+			"@subpath":null, 
+			"@path": "res://addons/godot_android_ads/src/serializables/provider.gd"
 			"app_id": "",
-			"banner_id": "",
+			"banner_ids": [],
 			"dependencies": [
 
 			],
 			"enabled": false,
-			"interstitial_id": "",
+			"interstitial_ids": {"default" :"default_interstitial_id" ,"home" :"home_interstitial_id"},
 			"provider_id": 0,
-			"rewarded_id": ""
+			"rewarded_ids": []
 		}
 	],
 	"version": "1.0.0"

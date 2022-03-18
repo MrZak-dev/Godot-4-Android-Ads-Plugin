@@ -5,9 +5,9 @@ var provider_id : int
 var enabled : bool
 var dependencies : Array[String]
 var app_id : String
-var interstitial_id : String
-var rewarded_id : String
-var banner_id : String
+var interstitial_ids : Dictionary
+var rewarded_ids : Dictionary
+var banner_ids : Dictionary
 
 
 func serialize() -> Dictionary:
@@ -16,9 +16,9 @@ func serialize() -> Dictionary:
 		"enabled" : enabled,
 		"dependencies" : _get_dependencies(),
 		"app_id" : app_id,
-		"interstitial_id" : interstitial_id,
-		"rewarded_id" : rewarded_id,
-		"banner_id" : banner_id
+		"interstitial_ids" : interstitial_ids,
+		"rewarded_ids" : rewarded_ids,
+		"banner_ids" : banner_ids
 	}
 	
 	return provider_data
@@ -30,3 +30,5 @@ func _get_dependencies() -> Array[String]:
 		dependencies_data.append(dependency)
 	
 	return dependencies_data
+
+

@@ -28,7 +28,7 @@ enum AdmobBannerSize {
 	LARGE_BANNER, # 320x100 Phones and Tablets
 }
 
-
+var _settings : Settings
 var _java_singleton : Object
 var _is_admob_interstitial_loaded : bool = false
 var _is_admob_rewarded_loaded : bool = false
