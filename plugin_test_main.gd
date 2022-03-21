@@ -4,10 +4,7 @@ extends Node
 func _ready() -> void:
 	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
 	
-	var imported_settings : Settings = SettingsImporter.import()
-	imported_settings.providers[0].interstitial_ids.home = "home interstitial"
-	SettingsExporter.export(imported_settings)
-	pass
+	SettingsHandler.add_provider(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

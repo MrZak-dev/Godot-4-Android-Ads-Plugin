@@ -13,9 +13,9 @@ signal rewarded_failed_to_load(provider:int, error_code:int,
 signal rewarded_opened(provider:int)
 signal rewarded_closed(provider:int)
 signal reward(provider:int, type:String, amount:int)
-#General plugin signals
+# General plugin signals
 signal log_message(message:String)
-
+signal _log_typed_message(type:int, message:String)
 
 enum AdsProvider {
 	ADMOB = 0,

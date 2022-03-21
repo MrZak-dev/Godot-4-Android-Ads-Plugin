@@ -32,12 +32,12 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"SettingsExporter",
 "language": &"GDScript",
-"path": "res://addons/godot_android_ads/src/settings_import_export/settings_exporter.gd"
+"path": "res://addons/godot_android_ads/src/settings/settings_import_export/settings_exporter.gd"
 }, {
 "base": "Node",
 "class": &"SettingsImporter",
 "language": &"GDScript",
-"path": "res://addons/godot_android_ads/src/settings_import_export/settings_importer.gd"
+"path": "res://addons/godot_android_ads/src/settings/settings_import_export/settings_importer.gd"
 }]
 _global_script_class_icons={
 "FileHandler": "",
@@ -58,6 +58,7 @@ config/features=PackedStringArray("4.0", "Vulkan Mobile")
 [autoload]
 
 AndroidAds="*res://addons/godot_android_ads/plugin_lib.gd"
+SettingsHandler="*res://addons/godot_android_ads/src/settings/SettingsHandler.gd"
 
 [display]
 

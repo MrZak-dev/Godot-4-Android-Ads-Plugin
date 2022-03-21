@@ -26,6 +26,14 @@ func serialize() -> Dictionary:
 	return provider_data
 
 
+func create_from_dict(data:Dictionary) -> void:
+	data["@subpath"] = null
+	data["@path"] = _get_class_path()
+	
+	for property in data.keys():
+		set(property, data[property])
+
+
 static func deserialize(provider_data:Dictionary) -> Serializable:
 	var provider : Provider = dict2inst(provider_data)
 	return provider

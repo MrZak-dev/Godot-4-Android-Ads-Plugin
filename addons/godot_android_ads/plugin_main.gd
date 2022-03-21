@@ -3,13 +3,16 @@ extends EditorPlugin
 
 const AndroidAdsLibPath : String = \
 	"res://addons/godot_android_ads/plugin_lib.gd"
+const SettingsHandler : String = \
+	"res://addons/godot_android_ads/src/settings/SettingsHandler.gd"
 const SettingPanel : PackedScene = \
-	preload("res://addons/godot_android_ads/src/settings_panel/settings_panel.tscn")
+	preload("res://addons/godot_android_ads/src/settings/settings_panel/settings_panel.tscn")
 
 var settings_panel_instance
 
 func _enter_tree() -> void:
 	add_autoload_singleton("AndroidAds", AndroidAdsLibPath)
+	add_autoload_singleton("SettingsHandler", SettingsHandler)
 	_set_settings_panel()
 
 
