@@ -29,15 +29,20 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://addons/godot_android_ads/src/serializables/settings.gd"
 }, {
-"base": "Node",
+"base": "RefCounted",
 "class": &"SettingsExporter",
 "language": &"GDScript",
 "path": "res://addons/godot_android_ads/src/settings/settings_import_export/settings_exporter.gd"
 }, {
-"base": "Node",
+"base": "RefCounted",
 "class": &"SettingsImporter",
 "language": &"GDScript",
 "path": "res://addons/godot_android_ads/src/settings/settings_import_export/settings_importer.gd"
+}, {
+"base": "RefCounted",
+"class": &"Utils",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/utils/Utils.gd"
 }]
 _global_script_class_icons={
 "FileHandler": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "Serializable": "",
 "Settings": "",
 "SettingsExporter": "",
-"SettingsImporter": ""
+"SettingsImporter": "",
+"Utils": ""
 }
 
 [application]

@@ -1,4 +1,3 @@
-extends Node
 class_name SettingsImporter
 
 const export_path : String = "res://addons/godot_android_ads/settings.json"

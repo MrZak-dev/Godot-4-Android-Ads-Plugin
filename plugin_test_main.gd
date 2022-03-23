@@ -5,10 +5,8 @@ func _ready() -> void:
 	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
 	
 	SettingsHandler.add_provider(1)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	SettingsHandler.add_interstitial_id(AndroidAds.AdsProvider.ADMOB,"game","game_id")
+	var _id = SettingsHandler.get_interstitial_id(AndroidAds.AdsProvider.ADMOB,"d")
 	pass
 
 
