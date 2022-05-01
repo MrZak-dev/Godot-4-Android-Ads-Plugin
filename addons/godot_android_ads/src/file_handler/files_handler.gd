@@ -13,6 +13,7 @@ static func file_read(path:String) -> String:
 		
 		return file_text
 	
+	Utils.log(Utils.LOG_TYPE.NOT_FOUND, "settings.json file is missing")
 	return ""
 
 

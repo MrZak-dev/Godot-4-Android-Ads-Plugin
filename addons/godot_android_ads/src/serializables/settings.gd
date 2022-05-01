@@ -21,7 +21,8 @@ func serialize() -> Dictionary:
 
 
 static func deserialize(settings_data:Dictionary) -> Serializable:
-	return Settings.new()
+	var settings : Settings = dict2inst(settings_data) as Settings
+	return settings
 
 
 func _get_providers() -> Array[Dictionary]:

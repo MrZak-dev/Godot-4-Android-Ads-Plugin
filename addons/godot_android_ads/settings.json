@@ -16,29 +16,11 @@
 			],
 			"enabled": false,
 			"interstitial_ids": {
-				"default": "default_interstitial_id",
-				"home": "home interstitial"
+				"default": "ca-app-pub-3940256099942544/1033173712",
+				"game": "game_id",
+				"home": "ca-app-pub-3940256099942544/1033173712"
 			},
 			"provider_id": 0,
-			"rewarded_ids": {
-
-			}
-		},
-		{
-			"@path": "res://addons/godot_android_ads/src/serializables/provider.gd",
-			"@subpath": null,
-			"app_id": "",
-			"banner_ids": {
-
-			},
-			"dependencies": [
-
-			],
-			"enabled": false,
-			"interstitial_ids": {
-
-			},
-			"provider_id": 1,
 			"rewarded_ids": {
 
 			}

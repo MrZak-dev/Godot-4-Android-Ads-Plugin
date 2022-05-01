@@ -1,6 +1,6 @@
 class_name SettingsExporter
 
-const export_path : String = "res://addons/godot_android_ads/settings.json"
+const settings_path : String = "res://addons/godot_android_ads/settings.json"
 
 
 static func export(settings: Settings) -> void:
@@ -9,4 +9,4 @@ static func export(settings: Settings) -> void:
 	var settings_data : Dictionary = settings.serialize()
 	var settings_json : String = json.stringify(settings_data, "\t")
 	
-	FileHandler.file_write(export_path, settings_json)
+	FileHandler.file_write(settings_path, settings_json)

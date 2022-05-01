@@ -28,10 +28,28 @@ enum AdmobBannerSize {
 	LARGE_BANNER, # 320x100 Phones and Tablets
 }
 
+const AdsProviderValues : Array[String] = [
+	"ADMOB",
+	"UNITY",
+	"APPLOVIN",
+]
+
 var _java_singleton : Object
+
 var _is_admob_interstitial_loaded : bool = false
 var _is_admob_rewarded_loaded : bool = false
 var _is_admob_banner_loaded : bool = false
+
+
+var is_admob_interstitial_loaded:
+	get:
+		return _is_admob_interstitial_loaded
+var is_admob_rewarded_loaded:
+	get:
+		return _is_admob_rewarded_loaded
+var is_admob_banner_loaded:
+	get:
+		return _is_admob_banner_loaded
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,14 +68,16 @@ func initialize_admob() -> void:
 	_java_singleton.initializeAdmob()
 
 
-func load_admob_interstitial(ad_id:String) -> void:
+func load_admob_interstitial(ad_name:String) -> void:
 	if _java_singleton == null : return
-	_java_singleton.loadAdmobInterstitial(ad_id)
+	var ad_id = SettingsHandler.get_interstitial_id(AdsProvider.ADMOB, ad_name)
+	if ad_id.is_empty(): return
+	_java_singleton.loadAdmobInterstitial(ad_name, ad_id)
 
 
-func show_admob_interstitial() -> void:
+func show_admob_interstitial(ad_name:String) -> void:
 	if _java_singleton == null : return
-	_java_singleton.showAdmobInterstitial()
+	_java_singleton.showAdmobInterstitial(ad_name)
 
 
 func load_admob_rewarded(ad_id:String) -> void:
@@ -104,9 +124,9 @@ func _connect_signals() -> void:
 
 
 ## Plugin signals 
-func _on_interstitial_loaded(provider:int) -> void:
-	_set_interstitial_load_status(provider, true)
-	print("interstitial loaded " + str(provider))
+func _on_interstitial_loaded(provider_id:int, ad_name:String) -> void:
+	_set_interstitial_load_status(provider_id, true)
+	print("%s interstitial %s loaded " % [_get_provider(provider_id), ad_name])
 
 
 func _on_interstitial_failed_to_load(provider:int, error_code:int,
@@ -233,3 +253,7 @@ func _set_rewarded_load_status(provider:int, status:bool) -> void:
 		_:
 			emit_signal("log_message",
 				"_set_rewarded_load_status : NO GIVEN ADS PROVIDER ")
+
+
+func _get_provider(provider_id:int) -> String:
+	return AdsProviderValues[provider_id]

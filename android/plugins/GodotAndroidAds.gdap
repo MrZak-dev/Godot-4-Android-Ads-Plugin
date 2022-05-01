@@ -1,0 +1,9 @@
+[config]
+
+name="GodotAndroidAds"
+binary_type="local"
+binary="GodotAndroidAds.0.1.0.debug.aar"
+
+[dependencies]
+
+remote=["com.google.android.gms:play-services-ads:20.5.0"]

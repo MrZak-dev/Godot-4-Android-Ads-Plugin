@@ -16,7 +16,10 @@ func get_provider(provider_id:int) -> Provider:
 
 
 # ------------------------------------------------------------------------------
-# 
+# Add a new ad provider to the plugin settings
+# @param provider_id : AndroidAds.AdsProvider 
+# @param enabled : enable or disable the provider in runtime
+# @param dependencies : java dependencies needed for build 
 # ------------------------------------------------------------------------------
 func add_provider(
 	provider_id:int,
@@ -50,6 +53,9 @@ func add_provider(
 	_export()
 
 
+# ------------------------------------------------------------------------------
+# Remove a provider from the plugin settings
+# ------------------------------------------------------------------------------
 func remove_provider(provider_id:int) -> bool:
 	if _has_provider(provider_id):
 		settings_instance.providers.remove_at(provider_id)
@@ -57,6 +63,9 @@ func remove_provider(provider_id:int) -> bool:
 	return false
 
 
+# ------------------------------------------------------------------------------
+# return ad provider interstitial id 
+# ------------------------------------------------------------------------------
 func get_interstitial_id(provider_id:int, ad_name:String="default") -> String:
 	if _has_provider(provider_id):
 		if settings_instance.providers[provider_id].interstitial_ids.has(ad_name):
@@ -66,6 +75,9 @@ func get_interstitial_id(provider_id:int, ad_name:String="default") -> String:
 	return ""
 
 
+# ------------------------------------------------------------------------------
+# return ad provider rewarded id 
+# ------------------------------------------------------------------------------
 func get_rewarded_id(provider_id:int, ad_name:String="default") -> String:
 	if _has_provider(provider_id):
 		if settings_instance.providers[provider_id].rewarded_ids.has(ad_name):
@@ -75,6 +87,9 @@ func get_rewarded_id(provider_id:int, ad_name:String="default") -> String:
 	return ""
 
 
+# ------------------------------------------------------------------------------
+# return ad provider banner id 
+# ------------------------------------------------------------------------------
 func get_banner_id(provider_id:int, ad_name:String="default") -> String:
 	if _has_provider(provider_id):
 		if settings_instance.providers[provider_id].banner_ids.has(ad_name):

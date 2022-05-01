@@ -68,9 +68,13 @@ SettingsHandler="*res://addons/godot_android_ads/src/settings/SettingsHandler.gd
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=960
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=360
+window/size/window_height_override=640
 window/handheld/orientation=1
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

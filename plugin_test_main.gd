@@ -1,17 +1,17 @@
 extends Node
-#var settings_class = preload("res://addons/godot_android_ads/src/settings.gd")
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
+	var ad_id = SettingsHandler.get_interstitial_id(
+		AndroidAds.AdsProvider.ADMOB, "default")
 	
-	SettingsHandler.add_provider(1)
-	SettingsHandler.add_interstitial_id(AndroidAds.AdsProvider.ADMOB,"game","game_id")
-	var _id = SettingsHandler.get_interstitial_id(AndroidAds.AdsProvider.ADMOB,"d")
-	pass
+	print(ad_id)
 
 
 func _on_emit_signal_pressed() -> void:
 	AndroidAds._test_plugin()
+
 
 func on_log_message(message:String) -> void:
 	print(message)
@@ -22,11 +22,11 @@ func _on_init_admob_btn_pressed() -> void:
 
 
 func _on_load_admob_interstitial_pressed() -> void:
-	AndroidAds.load_admob_interstitial("ca-app-pub-3940256099942544/1033173712")
+	AndroidAds.load_admob_interstitial("default")
 
 
 func _on_show_admob_interstitial_pressed() -> void:
-	AndroidAds.show_admob_interstitial()
+	AndroidAds.show_admob_interstitial("default")
 
 
 func _on_load_admob_rewarded_pressed() -> void:
