@@ -3,7 +3,7 @@ extends Node
 
 func _ready() -> void:
 	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
-	var ad_id = SettingsHandler.get_interstitial_id(
+	var ad_id = SettingsHandler.get_rewarded_id(
 		AndroidAds.AdsProvider.ADMOB, "default")
 	
 	print(ad_id)
@@ -30,23 +30,46 @@ func _on_show_admob_interstitial_pressed() -> void:
 
 
 func _on_load_admob_rewarded_pressed() -> void:
-	AndroidAds.load_admob_rewarded("ca-app-pub-3940256099942544/5224354917")
+	AndroidAds.load_admob_rewarded("default")
 
 
 func _on_show_admob_rewarded_pressed() -> void:
-	AndroidAds.show_admob_rewarded()
+	AndroidAds.show_admob_rewarded("default")
 
 
 func _on_load_admob_banner_pressed() -> void:
-	AndroidAds.load_admob_banner(
-		"ca-app-pub-3940256099942544/6300978111",
+	AndroidAds.load_admob_banner("default",
 		AndroidAds.AdmobBannerSize.LARGE_BANNER)
 
 
 func _on_show_admob_banner_pressed() -> void:
-	AndroidAds.show_admob_banner()
+	AndroidAds.show_admob_banner("default", false)
 
 
 func _on_hide_admob_banner_pressed() -> void:
 	AndroidAds.hide_admob_banner()
-	
+
+
+func _on_load_admob_interstitial_home_pressed() -> void:
+	AndroidAds.load_admob_interstitial("home")
+
+
+func _on_show_admob_interstitial_home_pressed() -> void:
+	AndroidAds.show_admob_interstitial("home")
+
+
+func _on_load_admob_rewarded_home_pressed() -> void:
+	AndroidAds.load_admob_rewarded("home")
+
+
+func _on_show_admob_rewarded_home_pressed() -> void:
+	AndroidAds.show_admob_rewarded("home")
+
+
+func _on_load_admob_banner_home_pressed() -> void:
+	AndroidAds.load_admob_banner("home",
+		AndroidAds.AdmobBannerSize.LARGE_BANNER)
+
+
+func _on_show_admob_banner_home_pressed() -> void:
+	AndroidAds.show_admob_banner("home", true)

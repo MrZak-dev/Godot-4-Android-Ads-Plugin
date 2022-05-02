@@ -80,28 +80,30 @@ func show_admob_interstitial(ad_name:String) -> void:
 	_java_singleton.showAdmobInterstitial(ad_name)
 
 
-func load_admob_rewarded(ad_id:String) -> void:
+func load_admob_rewarded(ad_name:String) -> void:
 	if _java_singleton == null : return
-	_java_singleton.loadAdmobRewarded(ad_id)
+	var ad_id = SettingsHandler.get_rewarded_id(AdsProvider.ADMOB, ad_name)
+	if ad_id.is_empty(): return
+	_java_singleton.loadAdmobRewarded(ad_name, ad_id)
 
 
-func show_admob_rewarded() -> void:
+func show_admob_rewarded(ad_name:String) -> void:
 	if _java_singleton == null : return
-	_java_singleton.showAdmobRewarded()
+	_java_singleton.showAdmobRewarded(ad_name)
 
 
 func load_admob_banner(
-	ad_id : String,
-	ad_size : AdmobBannerSize = AdmobBannerSize.BANNER,
-	is_on_top=false) -> void:
+	ad_name:String, ad_size:AdmobBannerSize = AdmobBannerSize.BANNER,) -> void:
 	
 	if _java_singleton == null : return
-	_java_singleton.loadAdmobBanner(ad_id, ad_size, is_on_top)
+	var ad_id = SettingsHandler.get_banner_id(AdsProvider.ADMOB, ad_name)
+	if ad_id.is_empty(): return
+	_java_singleton.loadAdmobBanner(ad_name, ad_id, ad_size)
 
 
-func show_admob_banner() -> void:
+func show_admob_banner(ad_name:String, is_on_top : bool) -> void:
 	if _java_singleton == null : return
-	_java_singleton.showAdmobBanner()
+	_java_singleton.showAdmobBanner(ad_name, is_on_top)
 
 
 func hide_admob_banner() -> void:
@@ -129,50 +131,53 @@ func _on_interstitial_loaded(provider_id:int, ad_name:String) -> void:
 	print("%s interstitial %s loaded " % [_get_provider(provider_id), ad_name])
 
 
-func _on_interstitial_failed_to_load(provider:int, error_code:int,
+func _on_interstitial_failed_to_load(provider:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("_on_interstitial_failed_to_load " + str(provider) + erro_message)
+	print("%s interstitial \"%s\" failed to load with code : %s and message : %s"%  
+		[_get_provider(provider), ad_name, str(error_code) , erro_message])
 
 
-func _on_interstitial_opened(provider:int) -> void:
-	_set_interstitial_load_status(provider, false)
-	print("_on_interstitial_opened " + str(provider))
+func _on_interstitial_opened(provider_id:int, ad_name:String) -> void:
+	_set_interstitial_load_status(provider_id, false)
+	print("%s interstitial \"%s\" opened " % [_get_provider(provider_id), ad_name])
 
 
-func _on_interstitial_closed(provider:int) -> void:
-	print("_on_interstitial_closed " + str(provider))
+func _on_interstitial_closed(provider_id:int, ad_name:String) -> void:
+	print("%s interstitial \"%s\" closed " % [_get_provider(provider_id), ad_name])
 
 
-func _on_rewarded_loaded(provider:int) -> void:
-	_set_rewarded_load_status(provider, true)
-	print("_on_rewarded_loaded " + str(provider))
+func _on_rewarded_loaded(provider_id:int, ad_name:String) -> void:
+	_set_rewarded_load_status(provider_id, true)
+	print("%s rewarded \"%s\" loaded " % [_get_provider(provider_id), ad_name])
 
 
-func _on_rewarded_failed_to_load(provider:int, error_code:int,
+func _on_rewarded_failed_to_load(provider:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("_on_rewarded_failed_to_load " + str(provider) + erro_message)
+	print("%s rewarded \"%s\" failed to load with code : %s and message : %s"%  
+		[_get_provider(provider), ad_name, str(error_code), erro_message])
 
 
-func _on_rewarded_opened(provider:int) -> void:
-	_set_rewarded_load_status(provider, false)
-	print("_on_rewarded_opened " + str(provider))
+func _on_rewarded_opened(provider_id:int, ad_name:String) -> void:
+	_set_rewarded_load_status(provider_id, false)
+	print("%s rewarded \"%s\" opened " % [_get_provider(provider_id), ad_name])
 
 
-func _on_rewarded_closed(provider:int) -> void:
-	print("_on_rewarded_closed " + str(provider))
+func _on_rewarded_closed(provider_id:int, ad_name:String) -> void:
+	print("%s rewarded \"%s\" closed " % [_get_provider(provider_id), ad_name])
 
 
-func _on_reward(provider:int, type:String, amount:int) -> void:
-	print("_on_reward " + type + str(provider))
+func _on_reward(provider_id:int, ad_name:String, type:String, amount:int) -> void:
+	print("%s reward from \"%s\" recived " % [_get_provider(provider_id), ad_name])
 
 
-func _on_banner_loaded(provider:int) -> void:
-	print("_on_banner_loaded " + str(provider))
+func _on_banner_loaded(provider_id:int, ad_name:String) -> void:
+	print("%s banner \"%s\" loaded " % [_get_provider(provider_id), ad_name])
 
 
-func _on_banner_failed_to_load(provider:int, error_code:int,
+func _on_banner_failed_to_load(provider_id:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("_on_banner_failed_to_load " + str(provider) + erro_message)
+	print("%s banner \"%s\" failed to load with code : %s and message : %s"%  
+		[_get_provider(provider_id), ad_name, str(error_code) , erro_message])
 
 
 func _on_log_message_send(message:String) -> void:

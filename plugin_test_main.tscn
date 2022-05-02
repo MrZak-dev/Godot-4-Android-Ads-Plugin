@@ -9,74 +9,146 @@ script = ExtResource( "1_c055v" )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="init_admob_btn" type="Button" parent="VBoxContainer"]
+[node name="spacing_1" type="Control" parent="VBoxContainer"]
 offset_right = 1080.0
-offset_bottom = 236.0
+offset_bottom = 109.0
+size_flags_vertical = 3
+
+[node name="init_admob_btn" type="Button" parent="VBoxContainer"]
+offset_top = 113.0
+offset_right = 1080.0
+offset_bottom = 222.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
 text = "Initialize admob"
 
-[node name="load_admob_interstitial" type="Button" parent="VBoxContainer"]
-offset_top = 240.0
+[node name="load_admob_interstitial_default" type="Button" parent="VBoxContainer"]
+offset_top = 226.0
 offset_right = 1080.0
-offset_bottom = 477.0
+offset_bottom = 335.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "load admob interstitial"
+text = "load admob interstitial (default)"
 
-[node name="show_admob_interstitial" type="Button" parent="VBoxContainer"]
-offset_top = 481.0
+[node name="load_admob_interstitial_home" type="Button" parent="VBoxContainer"]
+offset_top = 339.0
 offset_right = 1080.0
-offset_bottom = 717.0
+offset_bottom = 448.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "show admob interstitial"
+text = "load admob interstitial (home)"
 
-[node name="load_admob_rewarded" type="Button" parent="VBoxContainer"]
-offset_top = 721.0
+[node name="show_admob_interstitial_default" type="Button" parent="VBoxContainer"]
+offset_top = 452.0
 offset_right = 1080.0
-offset_bottom = 958.0
+offset_bottom = 561.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "load admob rewarded"
+text = "show admob interstitial (default)"
 
-[node name="show_admob_rewarded" type="Button" parent="VBoxContainer"]
-offset_top = 962.0
+[node name="show_admob_interstitial_home" type="Button" parent="VBoxContainer"]
+offset_top = 565.0
 offset_right = 1080.0
-offset_bottom = 1198.0
+offset_bottom = 675.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "show admob rewarded"
+text = "show admob interstitial (home)"
 
-[node name="load_admob_banner" type="Button" parent="VBoxContainer"]
-offset_top = 1202.0
+[node name="load_admob_rewarded_default" type="Button" parent="VBoxContainer"]
+offset_top = 679.0
 offset_right = 1080.0
-offset_bottom = 1439.0
+offset_bottom = 788.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "load admob banner"
+text = "load admob rewarded (default)"
 
-[node name="show_admob_banner" type="Button" parent="VBoxContainer"]
-offset_top = 1443.0
+[node name="load_admob_rewarded_home" type="Button" parent="VBoxContainer"]
+offset_top = 792.0
 offset_right = 1080.0
-offset_bottom = 1679.0
+offset_bottom = 901.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "show admob banner"
+text = "load admob rewarded (home)"
+
+[node name="show_admob_rewarded_default" type="Button" parent="VBoxContainer"]
+offset_top = 905.0
+offset_right = 1080.0
+offset_bottom = 1014.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "show admob rewarded (default)"
+
+[node name="show_admob_rewarded_home" type="Button" parent="VBoxContainer"]
+offset_top = 1018.0
+offset_right = 1080.0
+offset_bottom = 1127.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "show admob rewarded (home)"
+
+[node name="load_admob_banner_default" type="Button" parent="VBoxContainer"]
+offset_top = 1131.0
+offset_right = 1080.0
+offset_bottom = 1240.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "load admob banner (default)"
+
+[node name="load_admob_banner_home" type="Button" parent="VBoxContainer"]
+offset_top = 1244.0
+offset_right = 1080.0
+offset_bottom = 1354.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "load admob banner (default)"
+
+[node name="show_admob_banner_default" type="Button" parent="VBoxContainer"]
+offset_top = 1358.0
+offset_right = 1080.0
+offset_bottom = 1467.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "show admob banner (default)"
+
+[node name="show_admob_banner_home" type="Button" parent="VBoxContainer"]
+offset_top = 1471.0
+offset_right = 1080.0
+offset_bottom = 1580.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 38
+text = "show admob banner (home)"
 
 [node name="hide_admob_banner" type="Button" parent="VBoxContainer"]
-offset_top = 1683.0
+offset_top = 1584.0
 offset_right = 1080.0
-offset_bottom = 1920.0
+offset_bottom = 1693.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
 text = "hide admob banner"
 
+[node name="spacing_2" type="Control" parent="VBoxContainer"]
+offset_top = 1697.0
+offset_right = 1080.0
+offset_bottom = 1806.0
+size_flags_vertical = 3
+
+[node name="spacing_3" type="Control" parent="VBoxContainer"]
+offset_top = 1810.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+size_flags_vertical = 3
+
 [connection signal="pressed" from="VBoxContainer/init_admob_btn" to="." method="_on_init_admob_btn_pressed"]
-[connection signal="pressed" from="VBoxContainer/load_admob_interstitial" to="." method="_on_load_admob_interstitial_pressed"]
-[connection signal="pressed" from="VBoxContainer/show_admob_interstitial" to="." method="_on_show_admob_interstitial_pressed"]
-[connection signal="pressed" from="VBoxContainer/load_admob_rewarded" to="." method="_on_load_admob_rewarded_pressed"]
-[connection signal="pressed" from="VBoxContainer/show_admob_rewarded" to="." method="_on_show_admob_rewarded_pressed"]
-[connection signal="pressed" from="VBoxContainer/load_admob_banner" to="." method="_on_load_admob_banner_pressed"]
-[connection signal="pressed" from="VBoxContainer/show_admob_banner" to="." method="_on_show_admob_banner_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_interstitial_default" to="." method="_on_load_admob_interstitial_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_interstitial_home" to="." method="_on_load_admob_interstitial_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_interstitial_default" to="." method="_on_show_admob_interstitial_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_interstitial_home" to="." method="_on_show_admob_interstitial_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_rewarded_default" to="." method="_on_load_admob_rewarded_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_rewarded_home" to="." method="_on_load_admob_rewarded_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_rewarded_default" to="." method="_on_show_admob_rewarded_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_rewarded_home" to="." method="_on_show_admob_rewarded_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_banner_default" to="." method="_on_load_admob_banner_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_banner_home" to="." method="_on_load_admob_banner_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_banner_default" to="." method="_on_show_admob_banner_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_banner_home" to="." method="_on_show_admob_banner_home_pressed"]
 [connection signal="pressed" from="VBoxContainer/hide_admob_banner" to="." method="_on_hide_admob_banner_pressed"]

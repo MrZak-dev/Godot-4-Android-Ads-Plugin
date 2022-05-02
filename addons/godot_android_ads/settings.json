@@ -9,7 +9,8 @@
 			"@subpath": null,
 			"app_id": "",
 			"banner_ids": {
-
+				"default": "ca-app-pub-3940256099942544/6300978111",
+				"home": "ca-app-pub-3940256099942544/6300978111"
 			},
 			"dependencies": [
 
@@ -17,12 +18,12 @@
 			"enabled": false,
 			"interstitial_ids": {
 				"default": "ca-app-pub-3940256099942544/1033173712",
-				"game": "game_id",
 				"home": "ca-app-pub-3940256099942544/1033173712"
 			},
 			"provider_id": 0,
 			"rewarded_ids": {
-
+				"default": "ca-app-pub-3940256099942544/5224354917",
+				"home": "ca-app-pub-3940256099942544/5224354917"
 			}
 		},
 		{
