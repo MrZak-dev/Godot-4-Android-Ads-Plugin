@@ -15,7 +15,6 @@ signal rewarded_closed(provider:int)
 signal reward(provider:int, type:String, amount:int)
 # General plugin signals
 signal log_message(message:String)
-signal _log_typed_message(type:int, message:String)
 
 enum AdsProvider {
 	ADMOB = 0,
@@ -62,10 +61,13 @@ func _test_plugin() -> void:
 	_java_singleton.testPlugin()
 
 
-### Admob ads ### 
-func initialize_admob() -> void:
+# ------------------------------------------------------------------------------
+# @param gdpr_enabled : enable/disable General Data Protection Regulation
+# @param ccpa_enabled : enable/disable California Consumer Privacy Act
+# ------------------------------------------------------------------------------
+func initialize_admob(gdpr_enabled:=false, ccpa_enabled:=false) -> void:
 	if _java_singleton == null : return
-	_java_singleton.initializeAdmob()
+	_java_singleton.initializeAdmob(gdpr_enabled, ccpa_enabled)
 
 
 func load_admob_interstitial(ad_name:String) -> void:
@@ -127,61 +129,79 @@ func _connect_signals() -> void:
 
 ## Plugin signals 
 func _on_interstitial_loaded(provider_id:int, ad_name:String) -> void:
-	_set_interstitial_load_status(provider_id, true)
-	print("%s interstitial %s loaded " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s interstitial %s loaded " % [_get_provider(provider_id), ad_name])
 
 
 func _on_interstitial_failed_to_load(provider:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("%s interstitial \"%s\" failed to load with code : %s and message : %s"%  
+	Utils.log(
+		Utils.LOG_TYPE.ERROR,
+		"%s interstitial \"%s\" failed to load with code : %s and message : %s"%  
 		[_get_provider(provider), ad_name, str(error_code) , erro_message])
 
 
 func _on_interstitial_opened(provider_id:int, ad_name:String) -> void:
-	_set_interstitial_load_status(provider_id, false)
-	print("%s interstitial \"%s\" opened " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s interstitial \"%s\" opened " % [_get_provider(provider_id), ad_name])
 
 
 func _on_interstitial_closed(provider_id:int, ad_name:String) -> void:
-	print("%s interstitial \"%s\" closed " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s interstitial \"%s\" closed " % [_get_provider(provider_id), ad_name])
 
 
 func _on_rewarded_loaded(provider_id:int, ad_name:String) -> void:
-	_set_rewarded_load_status(provider_id, true)
-	print("%s rewarded \"%s\" loaded " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s rewarded \"%s\" loaded " % [_get_provider(provider_id), ad_name])
 
 
 func _on_rewarded_failed_to_load(provider:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("%s rewarded \"%s\" failed to load with code : %s and message : %s"%  
+	Utils.log(
+		Utils.LOG_TYPE.ERROR,
+		"%s rewarded \"%s\" failed to load with code : %s and message : %s"%  
 		[_get_provider(provider), ad_name, str(error_code), erro_message])
 
 
 func _on_rewarded_opened(provider_id:int, ad_name:String) -> void:
-	_set_rewarded_load_status(provider_id, false)
-	print("%s rewarded \"%s\" opened " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s rewarded \"%s\" opened " % [_get_provider(provider_id), ad_name])
 
 
 func _on_rewarded_closed(provider_id:int, ad_name:String) -> void:
-	print("%s rewarded \"%s\" closed " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s rewarded \"%s\" closed " % [_get_provider(provider_id), ad_name])
 
 
 func _on_reward(provider_id:int, ad_name:String, type:String, amount:int) -> void:
-	print("%s reward from \"%s\" recived " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s reward from \"%s\" recived " % [_get_provider(provider_id), ad_name])
 
 
 func _on_banner_loaded(provider_id:int, ad_name:String) -> void:
-	print("%s banner \"%s\" loaded " % [_get_provider(provider_id), ad_name])
+	Utils.log(
+		Utils.LOG_TYPE.INFO,
+		"%s banner \"%s\" loaded " % [_get_provider(provider_id), ad_name])
 
 
 func _on_banner_failed_to_load(provider_id:int, ad_name:String, error_code:int,
 	erro_message:String) -> void:
-	print("%s banner \"%s\" failed to load with code : %s and message : %s"%  
+	Utils.log(
+		Utils.LOG_TYPE.ERROR,
+		"%s banner \"%s\" failed to load with code : %s and message : %s"%  
 		[_get_provider(provider_id), ad_name, str(error_code) , erro_message])
 
 
-func _on_log_message_send(message:String) -> void:
-	print(message)
+func _on_log_message_send(type : int, message:String) -> void:
+	Utils.log(type, message)
 
 
 func _init_singleton() -> bool:

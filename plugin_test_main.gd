@@ -1,14 +1,6 @@
 extends Node
 
 
-func _ready() -> void:
-	AndroidAds.connect("log_message", Callable(self, "on_log_message"))
-	var ad_id = SettingsHandler.get_rewarded_id(
-		AndroidAds.AdsProvider.ADMOB, "default")
-	
-	print(ad_id)
-
-
 func _on_emit_signal_pressed() -> void:
 	AndroidAds._test_plugin()
 

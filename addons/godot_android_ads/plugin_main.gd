@@ -25,11 +25,18 @@ func _get_plugin_name() -> String:
 	return "Android Ads"
 
 
-
 func _handles(object) -> bool:
 	return true
+
+
+#func _has_main_screen() -> bool:
+#	return true
 
 
 func _set_settings_panel() -> void:
 	settings_panel_instance = SettingPanel.instantiate()
 	add_control_to_bottom_panel(settings_panel_instance, _get_plugin_name())
+
+
+#func _get_plugin_icon() -> Texture2D:
+#	return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
