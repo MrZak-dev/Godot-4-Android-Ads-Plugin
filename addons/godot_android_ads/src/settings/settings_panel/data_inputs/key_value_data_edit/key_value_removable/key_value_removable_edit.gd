@@ -2,25 +2,40 @@
 extends KeyValueEdit
 class_name KeyValueRemovableEdit
 
-@export_node_path(VBoxContainer) var parent_path : NodePath
+signal add_requested
+signal delete_requested
 
-var _parent_node : VBoxContainer
-
-@onready var _add_btn : Button = get_node("%AddButton")
-@onready var _delete_btn : Button = get_node("%DeleteButton")
+@onready var _add_btn : TextureButton = get_node("%AddButton")
+@onready var _delete_btn : TextureButton = get_node("%DeleteButton")
 
 
 func _ready() -> void:
 	super._ready()
-	_parent_node = get_node(parent_path)
+
+
+func show_add_button() -> void:
+	_add_btn.set_visible(true)
+
+
+func hide_add_button() -> void:
+	_add_btn.set_visible(false)
+
+
+func show_delete_button() -> void:
+	_delete_btn.set_visible(true)
+
+
+func hide_delete_button() -> void:
+	_delete_btn.set_visible(true)
 
 
 func _on_add() -> void:
-	pass
+	emit_signal("add_requested")
 
 
 func _on_remove() -> void:
-	pass
+	queue_free()
+	emit_signal("delete_requested")
 
 
 func _exit_tree() -> void:

@@ -7,7 +7,6 @@
 
 [node name="KeyValueRemovableEdit" instance=ExtResource( "1_sg4gr" )]
 script = ExtResource( "1_f1yc8" )
-parent_path = NodePath("")
 
 [node name="KeyEdit" parent="." index="0"]
 offset_right = 353.0
