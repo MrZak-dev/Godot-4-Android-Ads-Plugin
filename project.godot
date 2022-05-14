@@ -9,10 +9,25 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "VBoxContainer",
+"class": &"DataEdit",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/data_edit.gd"
+}, {
 "base": "RefCounted",
 "class": &"FileHandler",
 "language": &"GDScript",
 "path": "res://addons/godot_android_ads/src/file_handler/files_handler.gd"
+}, {
+"base": "HBoxContainer",
+"class": &"KeyValueEdit",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_edit.gd"
+}, {
+"base": "KeyValueEdit",
+"class": &"KeyValueRemovableEdit",
+"language": &"GDScript",
+"path": "res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_removable/key_value_removable_edit.gd"
 }, {
 "base": "Serializable",
 "class": &"Provider",
@@ -45,7 +60,10 @@ _global_script_classes=[{
 "path": "res://addons/godot_android_ads/src/utils/Utils.gd"
 }]
 _global_script_class_icons={
+"DataEdit": "",
 "FileHandler": "",
+"KeyValueEdit": "",
+"KeyValueRemovableEdit": "",
 "Provider": "",
 "Serializable": "",
 "Settings": "",

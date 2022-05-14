@@ -1,0 +1,1123 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw0k021r2ae8u"]
+
+[ext_resource type="Texture2D" uid="uid://r8olt2ab4p8s" path="res://addons/godot_android_ads/assets/icons/plus.svg" id="1_33h23"]
+[ext_resource type="Texture2D" uid="uid://bf6c2q1rrgw7d" path="res://addons/godot_android_ads/assets/icons/trash.svg" id="2_kgqka"]
+[ext_resource type="PackedScene" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="3_si5y5"]
+[ext_resource type="PackedScene" uid="uid://dwo5gi43vpgfl" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_set_input/KeyValueDataSetInput.tscn" id="4_wbweu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6kx7"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir0s2"]
+bg_color = Color(0.14902, 0.168627, 0.203922, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_501mm"]
+bg_color = Color(0.254902, 0.290196, 0.352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SettingsPanel" type="VBoxContainer"]
+minimum_size = Vector2(600, 0)
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_right = 1080.0
+offset_bottom = 1920.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource( "StyleBoxFlat_j6kx7" )
+tab_alignment = 1
+
+[node name="AD Networks" type="TabBar" parent="TabContainer"]
+minimum_size = Vector2(0, 400)
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TabContent" type="VBoxContainer" parent="TabContainer/AD Networks"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = false
+
+[node name="MainHBox" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent"]
+offset_right = 1080.0
+offset_bottom = 1889.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ProvidersListContainer" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox"]
+offset_right = 200.0
+offset_bottom = 1889.0
+
+[node name="ProvidersList" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer"]
+minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 1696.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 90.0
+
+[node name="ItemList" type="ItemList" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ProvidersList"]
+minimum_size = Vector2(0, 350)
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -2.0
+size_flags_horizontal = 3
+item_count = 2
+item_0/text = "ADMOB"
+item_1/text = "UNITY"
+
+[node name="ActionBtns" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer"]
+offset_top = 1700.0
+offset_right = 200.0
+offset_bottom = 1889.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ActionBtns"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_left = 24.0
+offset_right = 44.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LeftVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox"]
+offset_left = 204.0
+offset_right = 212.0
+offset_bottom = 1889.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/LeftVerticalSectionSeparator"]
+offset_bottom = 1889.0
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/AD Networks/TabContent/MainHBox/LeftVerticalSectionSeparator"]
+minimum_size = Vector2(0, 200)
+offset_left = 4.0
+offset_top = 844.0
+offset_right = 8.0
+offset_bottom = 1044.0
+size_flags_vertical = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/AD Networks/TabContent/MainHBox"]
+offset_left = 216.0
+offset_right = 1068.0
+offset_bottom = 1889.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="ProviderSettingsContainer" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer"]
+offset_right = 852.0
+offset_bottom = 651.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="SectionTitle" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_right = 852.0
+offset_bottom = 44.0
+
+[node name="TopMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+minimum_size = Vector2(0, 10)
+offset_right = 852.0
+offset_bottom = 10.0
+
+[node name="SectionTitle" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+offset_top = 14.0
+offset_right = 852.0
+offset_bottom = 40.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle/SectionTitle"]
+minimum_size = Vector2(200, 0)
+offset_right = 852.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+text = "GAME ID's"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+offset_top = 44.0
+offset_right = 852.0
+offset_bottom = 44.0
+
+[node name="SettingsInput2" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 49.0
+offset_right = 504.0
+offset_bottom = 80.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2"]
+minimum_size = Vector2(200, 0)
+offset_top = 2.0
+offset_right = 200.0
+offset_bottom = 28.0
+text = "App ID"
+vertical_alignment = 1
+
+[node name="DataEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2" instance=ExtResource( "3_si5y5" )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 204.0
+offset_right = 504.0
+offset_bottom = 31.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 85.0
+offset_right = 852.0
+offset_bottom = 85.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 90.0
+offset_right = 852.0
+offset_bottom = 90.0
+
+[node name="KeyValueDataSetInput" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+
+[node name="PanelContainer2" type="PanelContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 181.0
+offset_right = 678.0
+offset_bottom = 327.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource( "StyleBoxFlat_501mm" )
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2"]
+offset_right = 678.0
+offset_bottom = 146.0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="GameIds" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer"]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 673.0
+offset_bottom = 136.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+auto_translate = false
+
+[node name="SettingsInput3" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds"]
+offset_right = 668.0
+offset_bottom = 126.0
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3"]
+minimum_size = Vector2(200, 0)
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 76.0
+text = "Rewarded ID"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3"]
+offset_left = 204.0
+offset_right = 668.0
+offset_bottom = 126.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer"]
+offset_right = 464.0
+offset_bottom = 61.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/HBoxContainer"]
+visible = false
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer"]
+offset_top = 65.0
+offset_right = 464.0
+offset_bottom = 126.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_left = 24.0
+offset_right = 44.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput3/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsInput4" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds"]
+visible = false
+offset_top = 130.0
+offset_right = 668.0
+offset_bottom = 256.0
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4"]
+minimum_size = Vector2(200, 0)
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 76.0
+text = "Rewarded ID"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4"]
+offset_left = 204.0
+offset_right = 668.0
+offset_bottom = 126.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer"]
+offset_right = 464.0
+offset_bottom = 61.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/HBoxContainer"]
+visible = false
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer"]
+offset_top = 65.0
+offset_right = 464.0
+offset_bottom = 126.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_left = 24.0
+offset_right = 44.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput4/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SettingsInput5" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds"]
+visible = false
+offset_top = 130.0
+offset_right = 668.0
+offset_bottom = 256.0
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5"]
+minimum_size = Vector2(200, 0)
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 76.0
+text = "Banner ID"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5"]
+offset_left = 204.0
+offset_right = 668.0
+offset_bottom = 126.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer"]
+offset_right = 464.0
+offset_bottom = 61.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/HBoxContainer"]
+visible = false
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer2/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer"]
+offset_top = 65.0
+offset_right = 464.0
+offset_bottom = 126.0
+theme_override_constants/separation = 10
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3"]
+minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/inputs"]
+offset_right = 100.0
+offset_bottom = 26.0
+size_flags_vertical = 3
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/inputs"]
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_custom_anchors = false
+
+[node name="inputs2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3"]
+offset_left = 110.0
+offset_right = 410.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/inputs2"]
+offset_right = 300.0
+offset_bottom = 26.0
+text = "ID"
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/inputs2"]
+minimum_size = Vector2(300, 0)
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 61.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3"]
+offset_left = 420.0
+offset_top = 41.0
+offset_right = 464.0
+offset_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="ActionButton2" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton2"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "2_kgqka" )
+texture_pressed = ExtResource( "2_kgqka" )
+texture_hover = ExtResource( "2_kgqka" )
+texture_focused = ExtResource( "2_kgqka" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ActionButton" type="Control" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/HBoxContainer"]
+minimum_size = Vector2(20, 20)
+offset_left = 24.0
+offset_right = 44.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="TextureButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/PanelContainer2/MarginContainer/GameIds/SettingsInput5/VBoxContainer/HBoxContainer3/HBoxContainer/ActionButton"]
+minimum_size = Vector2(15, 15)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+texture_normal = ExtResource( "1_33h23" )
+texture_pressed = ExtResource( "1_33h23" )
+texture_hover = ExtResource( "1_33h23" )
+texture_focused = ExtResource( "1_33h23" )
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="KeyValueDataSetInput2" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+offset_top = 332.0
+offset_bottom = 413.0
+
+[node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 418.0
+offset_right = 852.0
+offset_bottom = 462.0
+
+[node name="TopMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+minimum_size = Vector2(0, 10)
+offset_right = 852.0
+offset_bottom = 10.0
+
+[node name="SectionTitle" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+offset_top = 14.0
+offset_right = 852.0
+offset_bottom = 40.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2/SectionTitle"]
+minimum_size = Vector2(200, 0)
+offset_right = 852.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+text = "DEPENDENCIES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+offset_top = 44.0
+offset_right = 852.0
+offset_bottom = 44.0
+
+[node name="Dependencies" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 467.0
+offset_right = 620.0
+offset_bottom = 567.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+auto_translate = false
+
+[node name="SettingsInput5" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies"]
+offset_right = 620.0
+offset_bottom = 100.0
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
+minimum_size = Vector2(200, 0)
+offset_top = 37.0
+offset_right = 200.0
+offset_bottom = 63.0
+text = "Dependencies"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
+minimum_size = Vector2(410, 100)
+offset_left = 210.0
+offset_right = 620.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SectionTitle3" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+offset_top = 572.0
+offset_right = 852.0
+offset_bottom = 651.0
+
+[node name="TopMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+minimum_size = Vector2(0, 10)
+offset_right = 852.0
+offset_bottom = 10.0
+
+[node name="SectionTitle" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+offset_top = 14.0
+offset_right = 852.0
+offset_bottom = 40.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SectionTitle"]
+minimum_size = Vector2(200, 0)
+offset_right = 852.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+text = "GENERAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomMargin" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+offset_top = 44.0
+offset_right = 852.0
+offset_bottom = 44.0
+
+[node name="SettingsInput" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+offset_top = 48.0
+offset_right = 852.0
+offset_bottom = 79.0
+size_flags_vertical = 2
+
+[node name="Header" type="Label" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
+minimum_size = Vector2(200, 0)
+offset_top = 2.0
+offset_right = 200.0
+offset_bottom = 28.0
+text = "Enabled"
+vertical_alignment = 1
+
+[node name="inputs" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
+offset_left = 204.0
+offset_right = 852.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput/inputs"]
+offset_right = 44.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+focus_mode = 0
+flat = true
+alignment = 1
+icon_alignment = 1
+
+[node name="RightVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox"]
+offset_left = 1072.0
+offset_right = 1080.0
+offset_bottom = 1889.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/RightVerticalSectionSeparator"]
+offset_bottom = 1889.0
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/AD Networks/TabContent/MainHBox/RightVerticalSectionSeparator"]
+minimum_size = Vector2(0, 200)
+offset_left = 4.0
+offset_top = 844.0
+offset_right = 8.0
+offset_bottom = 1044.0
+size_flags_vertical = 4
+
+[node name="Plugin Settings" type="TabBar" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+
+[node name="TabContent" type="VBoxContainer" parent="TabContainer/Plugin Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SectionTitle" type="VBoxContainer" parent="TabContainer/Plugin Settings"]
+offset_left = 880.0
+offset_right = 1080.0
+offset_bottom = 34.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="TabContainer/Plugin Settings/SectionTitle"]
+offset_right = 200.0
+offset_bottom = 26.0
+text = "SECTION"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Plugin Settings/SectionTitle"]
+minimum_size = Vector2(200, 0)
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 34.0

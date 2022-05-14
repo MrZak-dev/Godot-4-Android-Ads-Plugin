@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/data_edit.gd" id="1_d1g2r"]
+
+[node name="DataEdit" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource( "1_d1g2r" )
+_header = ""
+
+[node name="Header" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_right = 1080.0
+offset_bottom = 1885.0
+size_flags_vertical = 3
+
+[node name="Edit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+minimum_size = Vector2(300, 30)
+offset_top = 944.0
+offset_right = 300.0
+offset_bottom = 975.0
+grow_vertical = 2
+size_flags_horizontal = 0
+metadata/_edit_use_custom_anchors = false
+
+[connection signal="focus_exited" from="Edit" to="." method="_on_edit_focus_exited"]
+[connection signal="text_submitted" from="Edit" to="." method="_on_edit_text_submitted"]

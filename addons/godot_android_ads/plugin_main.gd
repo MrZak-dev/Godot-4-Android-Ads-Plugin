@@ -6,7 +6,7 @@ const AndroidAdsLibPath : String = \
 const SettingsHandler : String = \
 	"res://addons/godot_android_ads/src/settings/SettingsHandler.gd"
 const SettingPanel : PackedScene = \
-	preload("res://addons/godot_android_ads/src/settings/settings_panel/settings_panel.tscn")
+	preload("res://addons/godot_android_ads/src/settings/settings_panel/SettingsPanel.tscn")
 
 var settings_panel_instance
 

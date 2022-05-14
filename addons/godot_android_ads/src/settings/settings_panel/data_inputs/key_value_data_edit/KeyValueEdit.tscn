@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://crp5atrhqc204"]
+
+[ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_edit.gd" id="1_tvw1p"]
+[ext_resource type="PackedScene" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="2_n0vio"]
+
+[node name="KeyValueEdit" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 0.032
+offset_bottom = -0.440002
+scale = Vector2(1.00543, 1)
+theme_override_constants/separation = 10
+script = ExtResource( "1_tvw1p" )
+_key_name = "Key"
+_value_name = "Value"
+
+[node name="KeyEdit" parent="." instance=ExtResource( "2_n0vio" )]
+unique_name_in_owner = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 535.0
+offset_bottom = 61.0
+_header = "Key"
+
+[node name="Header" parent="KeyEdit" index="0"]
+visible = true
+offset_right = 535.0
+offset_bottom = 26.0
+text = "Key"
+
+[node name="Edit" parent="KeyEdit" index="1"]
+minimum_size = Vector2(100, 30)
+offset_top = 30.0
+offset_right = 100.0
+offset_bottom = 61.0
+size_flags_vertical = 3
+
+[node name="ValueEdit" parent="." instance=ExtResource( "2_n0vio" )]
+unique_name_in_owner = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 545.0
+offset_right = 1080.0
+offset_bottom = 61.0
+_header = "Value"
+
+[node name="Header" parent="ValueEdit" index="0"]
+visible = true
+offset_right = 535.0
+offset_bottom = 26.0
+text = "Value"
+
+[node name="Edit" parent="ValueEdit" index="1"]
+offset_top = 30.0
+offset_bottom = 61.0
+
+[editable path="KeyEdit"]
+[editable path="ValueEdit"]

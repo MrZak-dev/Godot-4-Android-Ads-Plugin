@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwo5gi43vpgfl"]
+
+[ext_resource type="PackedScene" uid="uid://d4hfxd53poflj" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_removable/KeyValueRemovableEdit.tscn" id="1_6sbsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_501mm"]
+bg_color = Color(0.254902, 0.290196, 0.352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="KeyValueDataSetInput" type="PanelContainer"]
+offset_top = 95.0
+offset_right = 678.0
+offset_bottom = 176.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource( "StyleBoxFlat_501mm" )
+
+[node name="Margin" type="MarginContainer" parent="."]
+offset_right = 678.0
+offset_bottom = 81.0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 673.0
+offset_bottom = 71.0
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Margin/HBox"]
+minimum_size = Vector2(200, 0)
+offset_top = 17.0
+offset_right = 200.0
+offset_bottom = 43.0
+text = "Interstitial ID"
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Margin/HBox"]
+offset_left = 204.0
+offset_right = 668.0
+offset_bottom = 61.0
+
+[node name="KeyValueRemovableEdit" parent="Margin/HBox/VBox" instance=ExtResource( "1_6sbsk" )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 464.0
+offset_bottom = 61.0
+scale = Vector2(1, 1)
+_key_name = ""
+_value_name = ""

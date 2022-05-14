@@ -9,7 +9,7 @@ static func file_read(path:String) -> String:
 		
 		file_rw.open(path, File.READ)
 		var file_text = file_rw.get_as_text()
-		file_rw.close() 
+		file_rw.close()
 		
 		return file_text
 	
