@@ -13,20 +13,12 @@ func _ready() -> void:
 	super._ready()
 
 
-func show_add_button() -> void:
-	_add_btn.set_visible(true)
+func add_button_visibility(_visible:bool) -> void:
+	_add_btn.get_parent().set_visible(_visible)
 
 
-func hide_add_button() -> void:
-	_add_btn.set_visible(false)
-
-
-func show_delete_button() -> void:
-	_delete_btn.set_visible(true)
-
-
-func hide_delete_button() -> void:
-	_delete_btn.set_visible(true)
+func delete_button_visibility(_visible:bool) -> void:
+	_delete_btn.get_parent().set_visible(_visible)
 
 
 func _on_add() -> void:

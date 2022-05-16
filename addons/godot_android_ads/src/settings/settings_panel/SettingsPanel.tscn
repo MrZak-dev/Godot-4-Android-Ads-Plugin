@@ -233,6 +233,10 @@ offset_right = 852.0
 offset_bottom = 90.0
 
 [node name="KeyValueDataSetInput" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+anchor_right = 0.0
+offset_top = 95.0
+offset_right = 678.0
+offset_bottom = 176.0
 
 [node name="PanelContainer2" type="PanelContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
 offset_top = 181.0
@@ -951,7 +955,9 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="KeyValueDataSetInput2" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+anchor_right = 0.0
 offset_top = 332.0
+offset_right = 678.0
 offset_bottom = 413.0
 
 [node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/AD Networks/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
