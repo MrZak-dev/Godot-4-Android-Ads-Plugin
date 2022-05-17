@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://egqx5aookpsm"]
 
 [ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/data_edit.gd" id="1_d1g2r"]
 

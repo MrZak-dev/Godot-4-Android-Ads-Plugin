@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crp5atrhqc204"]
 
 [ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_edit.gd" id="1_tvw1p"]
-[ext_resource type="PackedScene" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="2_n0vio"]
+[ext_resource type="PackedScene" uid="uid://egqx5aookpsm" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="2_n0vio"]
 
 [node name="KeyValueEdit" type="HBoxContainer"]
 anchor_right = 1.0
@@ -28,9 +28,9 @@ offset_bottom = 26.0
 text = "Key"
 
 [node name="Edit" parent="KeyEdit" index="1"]
-minimum_size = Vector2(100, 30)
+minimum_size = Vector2(120, 30)
 offset_top = 30.0
-offset_right = 100.0
+offset_right = 120.0
 offset_bottom = 61.0
 size_flags_vertical = 3
 
