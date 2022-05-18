@@ -22,20 +22,17 @@ func delete_button_visibility(_visible:bool) -> void:
 
 
 func _on_add() -> void:
-	emit_signal("add_requested")
+	add_requested.emit()
 
 
 func _on_remove() -> void:
 	queue_free()
-	emit_signal("delete_requested")
-
-
-func _exit_tree() -> void:
-	emit_signal("data_submitted")
+	delete_requested.emit()
+	data_submitted.emit()
 
 
 func _set_signals() -> void:
 	super._set_signals()
 	
-	_add_btn.connect("pressed", Callable(self, "_on_add"))
-	_delete_btn.connect("pressed", Callable(self, "_on_remove"))
+	_add_btn.pressed.connect(Callable(self, "_on_add"))
+	_delete_btn.pressed.connect(Callable(self, "_on_remove"))

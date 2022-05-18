@@ -21,13 +21,17 @@ func _ready() -> void:
 	header = _header
 
 
-func get_edit_text() -> String:
+func get_text() -> String:
 	return _edit.get_text()
 
 
-func _set_edit_text(text:String) -> void:
+func set_text(text:String) -> void:
 	_edit.set_text(text)
-	_edit.emit_signal("text_validated")
+
+
+func _set_text(text:String) -> void:
+	set_text(text)
+	text_validated.emit()
 
 
 func _clean_spaces(text:String) -> String:
@@ -35,8 +39,8 @@ func _clean_spaces(text:String) -> String:
 
 
 func _on_edit_focus_exited() -> void:
-	_set_edit_text(_clean_spaces(get_edit_text()))
+	_set_text(_clean_spaces(get_text()))
 
 
 func _on_edit_text_submitted(new_text: String) -> void:
-	_set_edit_text(_clean_spaces(get_edit_text()))
+	_set_text(_clean_spaces(get_text()))

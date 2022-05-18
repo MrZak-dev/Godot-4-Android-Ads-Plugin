@@ -17,32 +17,64 @@ const _input_scn : PackedScene = preload(
 
 func _ready() -> void:
 	_set_inputs_container_signals()
-	_add_key_value_input()
 	_set_header_text()
+	
+	set_data({
+		"default" : "ca-app-pub-123",
+		"home" : "ca-app-pub-456",
+	})
+
+
+func get_data() -> Dictionary:
+	await get_tree().process_frame # wait for children to be added and removed
+	var data : Dictionary = {}
+	for c in _inputs_container.get_children():
+		var _c : KeyValueEdit = c
+		
+		var key : String = _c.get_key()
+		var value : String = _c.get_value() 
+		
+		if not key.is_empty() and not value.is_empty():
+			data[_c.get_key()] = _c.get_value()
+		
+	return data
+
+
+func set_data(data:Dictionary) -> void:
+	for i in data.size():
+		_add_key_value_input(data.keys()[i], data.values()[i])
+	
+	if data.size() == 0 and _inputs_container.get_child_count() == 0:
+		_add_key_value_input()
 
 
 func _set_inputs_container_signals() -> void:
-	_inputs_container.connect(
-		"child_entered_tree", Callable(self, "_on_input_add"))
-	_inputs_container.connect(
-		"child_exited_tree", Callable(self, "_on_input_deleted"))
+	_inputs_container.child_entered_tree.connect(
+		Callable(self, "_on_input_add"))
+	_inputs_container.child_exited_tree.connect(
+		Callable(self, "_on_input_deleted"))
 
 
 func _set_header_text() -> void:
 	_set_header_lbl.set_text(_data_set_header)
 
 
-func _add_key_value_input() -> void:
+func _add_key_value_input(key_data := "", value_data := "") -> void:
 	var key_value_input : KeyValueRemovableEdit = _input_scn.instantiate()
 	_inputs_container.add_child(key_value_input)
 	
 	key_value_input.key_name = _data_set_key_header
 	key_value_input.value_name = _data_set_value_header
 	
-	key_value_input.connect(
-		"add_requested", Callable(self, "_on_add_requested"))
-	key_value_input.connect(
-		"delete_requested", Callable(self, "_on_delete_requested"))
+	key_value_input.add_requested.connect(
+		Callable(self, "_on_add_requested"))
+	key_value_input.delete_requested.connect(
+		Callable(self, "_on_delete_requested"))
+	key_value_input.data_submitted.connect(
+		Callable(self, "_on_input_data_submitted"))
+	
+	key_value_input.set_key(key_data)
+	key_value_input.set_value(value_data)
 	
 	_set_buttons_visibility()
 
@@ -78,3 +110,7 @@ func _on_input_add(input: Node) -> void:
 
 func _on_input_deleted(input: Node) -> void:
 	_set_buttons_visibility()
+
+
+func _on_input_data_submitted() -> void:
+	print(await get_data())
