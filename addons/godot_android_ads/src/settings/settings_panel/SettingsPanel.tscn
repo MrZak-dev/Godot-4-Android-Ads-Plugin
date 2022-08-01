@@ -1,7 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw0k021r2ae8u"]
+[gd_scene load_steps=5 format=3 uid="uid://bw0k021r2ae8u"]
 
-[ext_resource type="Texture2D" uid="uid://r8olt2ab4p8s" path="res://addons/godot_android_ads/assets/icons/plus.svg" id="1_33h23"]
-[ext_resource type="Texture2D" uid="uid://bf6c2q1rrgw7d" path="res://addons/godot_android_ads/assets/icons/trash.svg" id="2_kgqka"]
 [ext_resource type="PackedScene" uid="uid://egqx5aookpsm" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="3_si5y5"]
 [ext_resource type="PackedScene" uid="uid://dwo5gi43vpgfl" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_set_input/KeyValueDataSetInput.tscn" id="4_wbweu"]
 
@@ -101,11 +99,6 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
-texture_normal = ExtResource( "1_33h23" )
-texture_pressed = ExtResource( "1_33h23" )
-texture_hover = ExtResource( "1_33h23" )
-texture_focused = ExtResource( "1_33h23" )
-ignore_texture_size = true
 stretch_mode = 4
 
 [node name="ActionButton2" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
@@ -126,11 +119,6 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
-texture_normal = ExtResource( "2_kgqka" )
-texture_pressed = ExtResource( "2_kgqka" )
-texture_hover = ExtResource( "2_kgqka" )
-texture_focused = ExtResource( "2_kgqka" )
-ignore_texture_size = true
 stretch_mode = 4
 
 [node name="LeftVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
@@ -159,7 +147,7 @@ follow_focus = true
 
 [node name="ProviderSettingsContainer" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer"]
 offset_right = 852.0
-offset_bottom = 586.0
+offset_bottom = 781.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
@@ -228,26 +216,26 @@ offset_bottom = 90.0
 anchor_right = 0.0
 offset_top = 95.0
 offset_right = 700.0
-offset_bottom = 176.0
+offset_bottom = 241.0
 
 [node name="RewardedKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
 anchor_right = 0.0
-offset_top = 181.0
+offset_top = 246.0
 offset_right = 700.0
-offset_bottom = 262.0
+offset_bottom = 392.0
 _data_set_header = "Rewarded ID"
 
 [node name="BannerKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
 anchor_right = 0.0
-offset_top = 267.0
+offset_top = 397.0
 offset_right = 700.0
-offset_bottom = 348.0
+offset_bottom = 543.0
 _data_set_header = "Banner ID"
 
 [node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 353.0
+offset_top = 548.0
 offset_right = 852.0
-offset_bottom = 397.0
+offset_bottom = 592.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
 minimum_size = Vector2(0, 10)
@@ -276,9 +264,9 @@ offset_right = 852.0
 offset_bottom = 44.0
 
 [node name="Dependencies" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 402.0
+offset_top = 597.0
 offset_right = 620.0
-offset_bottom = 502.0
+offset_bottom = 697.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 auto_translate = false
@@ -306,9 +294,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SectionTitle3" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 507.0
+offset_top = 702.0
 offset_right = 852.0
-offset_bottom = 586.0
+offset_bottom = 781.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
 minimum_size = Vector2(0, 10)

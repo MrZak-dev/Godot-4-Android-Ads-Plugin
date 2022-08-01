@@ -53,5 +53,8 @@ func set_data(key_value:Dictionary) -> void:
 
 
 func _set_signals() -> void:
-	key_data_edit.text_validated.connect(func(): emit_signal("data_submitted"))
-	value_data_edit.text_validated.connect(func(): emit_signal("data_submitted"))
+	key_data_edit.text_validated.connect(func(): data_submitted.emit())
+	value_data_edit.text_validated.connect(func(): data_submitted.emit())
+
+
+# TODO : set_occupied_values

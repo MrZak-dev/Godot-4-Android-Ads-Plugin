@@ -16,7 +16,7 @@
 
 			],
 			"enabled": false,
-			"interstitial_ids": {s
+			"interstitial_ids": {
 				"default": "ca-app-pub-3940256099942544/1033173712",
 				"home": "ca-app-pub-3940256099942544/1033173712"
 			},

@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name Serializable
 
 # ------------------------------------------------------------------------------
@@ -9,9 +9,11 @@ func serialize() -> Dictionary:
 	assert(false, "Should be overriden")
 	return {}
 
+
 func _get_class_path() -> String:
 	assert(false, "Should be overriden")
 	return ""
+
 
 # ------------------------------------------------------------------------------
 # Virtual to Override
