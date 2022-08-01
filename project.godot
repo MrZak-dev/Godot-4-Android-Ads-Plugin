@@ -82,8 +82,8 @@ _global_script_class_icons={
 
 config/name="Godot_Android_Ads_Plugin"
 run/main_scene="res://plugin_test_main.tscn"
-config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
+config/icon="res://icon.png"
 
 [autoload]
 

@@ -9,11 +9,11 @@ anchor_bottom = 0.032
 offset_bottom = -0.440002
 scale = Vector2(1.00543, 1)
 theme_override_constants/separation = 10
-script = ExtResource( "1_tvw1p" )
+script = ExtResource("1_tvw1p")
 _key_name = "Key"
 _value_name = "Value"
 
-[node name="KeyEdit" parent="." instance=ExtResource( "2_n0vio" )]
+[node name="KeyEdit" parent="." instance=ExtResource("2_n0vio")]
 unique_name_in_owner = true
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -28,13 +28,11 @@ offset_bottom = 26.0
 text = "Key"
 
 [node name="Edit" parent="KeyEdit" index="1"]
-minimum_size = Vector2(120, 30)
 offset_top = 30.0
-offset_right = 120.0
 offset_bottom = 61.0
 size_flags_vertical = 3
 
-[node name="ValueEdit" parent="." instance=ExtResource( "2_n0vio" )]
+[node name="ValueEdit" parent="." instance=ExtResource("2_n0vio")]
 unique_name_in_owner = true
 anchor_right = 0.0
 anchor_bottom = 0.0

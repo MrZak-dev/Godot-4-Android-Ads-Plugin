@@ -7,7 +7,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 alignment = 1
-script = ExtResource( "1_d1g2r" )
+script = ExtResource("1_d1g2r")
 _header = ""
 
 [node name="Header" type="Label" parent="."]
@@ -19,7 +19,7 @@ size_flags_vertical = 3
 
 [node name="Edit" type="LineEdit" parent="."]
 unique_name_in_owner = true
-minimum_size = Vector2(300, 30)
+custom_minimum_size = Vector2(300, 30)
 offset_top = 944.0
 offset_right = 300.0
 offset_bottom = 975.0

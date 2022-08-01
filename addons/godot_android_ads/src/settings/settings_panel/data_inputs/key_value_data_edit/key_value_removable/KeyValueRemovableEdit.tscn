@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/key_value_removable/key_value_removable_edit.gd" id="1_f1yc8"]
 [ext_resource type="PackedScene" uid="uid://crp5atrhqc204" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/key_value_data_edit/KeyValueEdit.tscn" id="1_sg4gr"]
-[ext_resource type="Texture2D" uid="uid://bf6c2q1rrgw7d" path="res://addons/godot_android_ads/assets/icons/trash.svg" id="3_pn7yq"]
-[ext_resource type="Texture2D" uid="uid://r8olt2ab4p8s" path="res://addons/godot_android_ads/assets/icons/plus.svg" id="4_k13c8"]
+[ext_resource type="Texture2D" uid="uid://bf6c2q1rrgw7d" path="res://addons/godot_android_ads/assets/icons/trash.svg" id="3_ru8oa"]
+[ext_resource type="Texture2D" uid="uid://r8olt2ab4p8s" path="res://addons/godot_android_ads/assets/icons/plus.svg" id="4_bvexd"]
 
-[node name="KeyValueRemovableEdit" instance=ExtResource( "1_sg4gr" )]
-script = ExtResource( "1_f1yc8" )
+[node name="KeyValueRemovableEdit" instance=ExtResource("1_sg4gr")]
+script = ExtResource("1_f1yc8")
 
 [node name="KeyEdit" parent="." index="0"]
 offset_right = 353.0
@@ -14,12 +14,18 @@ offset_right = 353.0
 [node name="Header" parent="KeyEdit" index="0"]
 offset_right = 353.0
 
+[node name="Edit" parent="KeyEdit" index="1"]
+offset_right = 300.0
+
 [node name="ValueEdit" parent="." index="1"]
 offset_left = 363.0
 offset_right = 716.0
 
 [node name="Header" parent="ValueEdit" index="0"]
 offset_right = 353.0
+
+[node name="Edit" parent="ValueEdit" index="1"]
+offset_right = 300.0
 
 [node name="Actions" type="HBoxContainer" parent="." index="2"]
 offset_left = 726.0
@@ -30,7 +36,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 
 [node name="Delete" type="Control" parent="Actions" index="0"]
-minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(20, 20)
 offset_right = 20.0
 offset_bottom = 20.0
 size_flags_horizontal = 4
@@ -38,7 +44,6 @@ size_flags_vertical = 4
 
 [node name="DeleteButton" type="TextureButton" parent="Actions/Delete" index="0"]
 unique_name_in_owner = true
-minimum_size = Vector2(15, 15)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -47,16 +52,16 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
-texture_normal = ExtResource( "3_pn7yq" )
-texture_pressed = ExtResource( "3_pn7yq" )
-texture_hover = ExtResource( "3_pn7yq" )
-texture_disabled = ExtResource( "3_pn7yq" )
-texture_focused = ExtResource( "3_pn7yq" )
+texture_normal = ExtResource("3_ru8oa")
+texture_pressed = ExtResource("3_ru8oa")
+texture_hover = ExtResource("3_ru8oa")
+texture_disabled = ExtResource("3_ru8oa")
+texture_focused = ExtResource("3_ru8oa")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Add" type="Control" parent="Actions" index="1"]
-minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(20, 20)
 offset_left = 24.0
 offset_right = 44.0
 offset_bottom = 20.0
@@ -65,7 +70,6 @@ size_flags_vertical = 4
 
 [node name="AddButton" type="TextureButton" parent="Actions/Add" index="0"]
 unique_name_in_owner = true
-minimum_size = Vector2(15, 15)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -74,11 +78,11 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
-texture_normal = ExtResource( "4_k13c8" )
-texture_pressed = ExtResource( "4_k13c8" )
-texture_hover = ExtResource( "4_k13c8" )
-texture_disabled = ExtResource( "4_k13c8" )
-texture_focused = ExtResource( "4_k13c8" )
+texture_normal = ExtResource("4_bvexd")
+texture_pressed = ExtResource("4_bvexd")
+texture_hover = ExtResource("4_bvexd")
+texture_disabled = ExtResource("4_bvexd")
+texture_focused = ExtResource("4_bvexd")
 ignore_texture_size = true
 stretch_mode = 4
 

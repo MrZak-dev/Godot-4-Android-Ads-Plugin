@@ -14,7 +14,6 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="SettingsPanel" type="VBoxContainer"]
-minimum_size = Vector2(600, 0)
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -22,11 +21,10 @@ anchor_bottom = 1.0
 offset_right = 1080.0
 offset_bottom = 1920.0
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource( "StyleBoxFlat_j6kx7" )
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6kx7")
 tab_alignment = 1
 
 [node name="PROVIDERS" type="TabBar" parent="TabContainer"]
-minimum_size = Vector2(0, 400)
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 31.0
@@ -51,18 +49,14 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="ProvidersListContainer" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
-offset_right = 200.0
 offset_bottom = 1889.0
 
 [node name="ProvidersList" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer"]
-minimum_size = Vector2(200, 0)
-offset_right = 200.0
 offset_bottom = 1696.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 90.0
 
 [node name="ItemList" type="ItemList" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ProvidersList"]
-minimum_size = Vector2(0, 350)
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -2.0
@@ -73,7 +67,6 @@ item_1/text = "UNITY"
 
 [node name="ActionBtns" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer"]
 offset_top = 1700.0
-offset_right = 200.0
 offset_bottom = 1889.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
@@ -83,14 +76,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ActionButton" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
-minimum_size = Vector2(20, 20)
-offset_right = 20.0
-offset_bottom = 20.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="Button" type="TextureButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton"]
-minimum_size = Vector2(15, 15)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -102,15 +91,12 @@ offset_bottom = 7.5
 stretch_mode = 4
 
 [node name="ActionButton2" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
-minimum_size = Vector2(20, 20)
-offset_left = 24.0
-offset_right = 44.0
-offset_bottom = 20.0
+offset_left = 4.0
+offset_right = 4.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="Button" type="TextureButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton2"]
-minimum_size = Vector2(15, 15)
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -122,23 +108,22 @@ offset_bottom = 7.5
 stretch_mode = 4
 
 [node name="LeftVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
-offset_left = 204.0
-offset_right = 212.0
+offset_left = 4.0
+offset_right = 12.0
 offset_bottom = 1889.0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/LeftVerticalSectionSeparator"]
 offset_bottom = 1889.0
 
 [node name="VSeparator" type="VSeparator" parent="TabContainer/PROVIDERS/TabContent/MainHBox/LeftVerticalSectionSeparator"]
-minimum_size = Vector2(0, 200)
 offset_left = 4.0
-offset_top = 844.0
+offset_top = 943.0
 offset_right = 8.0
-offset_bottom = 1044.0
+offset_bottom = 946.0
 size_flags_vertical = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
-offset_left = 216.0
+offset_left = 16.0
 offset_right = 1068.0
 offset_bottom = 1889.0
 size_flags_horizontal = 3
@@ -146,208 +131,193 @@ size_flags_vertical = 3
 follow_focus = true
 
 [node name="ProviderSettingsContainer" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer"]
-offset_right = 852.0
-offset_bottom = 781.0
+offset_right = 1052.0
+offset_bottom = 672.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
 [node name="SectionTitle" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_right = 852.0
-offset_bottom = 44.0
+offset_right = 1052.0
+offset_bottom = 34.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
-minimum_size = Vector2(0, 10)
-offset_right = 852.0
-offset_bottom = 10.0
+offset_right = 1052.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
-offset_top = 14.0
-offset_right = 852.0
-offset_bottom = 40.0
+offset_top = 4.0
+offset_right = 1052.0
+offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle/SectionTitle"]
-minimum_size = Vector2(200, 0)
-offset_right = 852.0
+offset_right = 1052.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+theme_override_styles/normal = SubResource("StyleBoxFlat_ir0s2")
 text = "GAME ID's"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
-offset_top = 44.0
-offset_right = 852.0
-offset_bottom = 44.0
+offset_top = 34.0
+offset_right = 1052.0
+offset_bottom = 34.0
 
 [node name="SettingsInput2" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 49.0
-offset_right = 852.0
-offset_bottom = 80.0
+offset_top = 39.0
+offset_right = 1052.0
+offset_bottom = 70.0
 size_flags_vertical = 3
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2"]
-minimum_size = Vector2(200, 0)
 offset_top = 2.0
-offset_right = 200.0
+offset_right = 52.0
 offset_bottom = 28.0
 text = "App ID"
 vertical_alignment = 1
 
-[node name="DataEdit" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2" instance=ExtResource( "3_si5y5" )]
+[node name="DataEdit" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2" instance=ExtResource("3_si5y5")]
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 204.0
-offset_right = 852.0
+offset_left = 56.0
+offset_right = 1052.0
 offset_bottom = 31.0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 85.0
-offset_right = 852.0
-offset_bottom = 85.0
+offset_top = 75.0
+offset_right = 1052.0
+offset_bottom = 75.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 90.0
-offset_right = 852.0
-offset_bottom = 90.0
+offset_top = 80.0
+offset_right = 1052.0
+offset_bottom = 80.0
 
-[node name="InterstitialKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+[node name="InterstitialKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
 anchor_right = 0.0
-offset_top = 95.0
-offset_right = 700.0
-offset_bottom = 241.0
+offset_top = 85.0
+offset_right = 800.0
+offset_bottom = 231.0
 
-[node name="RewardedKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+[node name="RewardedKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
 anchor_right = 0.0
-offset_top = 246.0
-offset_right = 700.0
-offset_bottom = 392.0
+offset_top = 236.0
+offset_right = 800.0
+offset_bottom = 382.0
 _data_set_header = "Rewarded ID"
 
-[node name="BannerKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource( "4_wbweu" )]
+[node name="BannerKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
 anchor_right = 0.0
-offset_top = 397.0
-offset_right = 700.0
-offset_bottom = 543.0
+offset_top = 387.0
+offset_right = 800.0
+offset_bottom = 533.0
 _data_set_header = "Banner ID"
 
 [node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 548.0
-offset_right = 852.0
-offset_bottom = 592.0
+offset_top = 538.0
+offset_right = 1052.0
+offset_bottom = 572.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
-minimum_size = Vector2(0, 10)
-offset_right = 852.0
-offset_bottom = 10.0
+offset_right = 1052.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
-offset_top = 14.0
-offset_right = 852.0
-offset_bottom = 40.0
+offset_top = 4.0
+offset_right = 1052.0
+offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2/SectionTitle"]
-minimum_size = Vector2(200, 0)
-offset_right = 852.0
+offset_right = 1052.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+theme_override_styles/normal = SubResource("StyleBoxFlat_ir0s2")
 text = "DEPENDENCIES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
-offset_top = 44.0
-offset_right = 852.0
-offset_bottom = 44.0
+offset_top = 34.0
+offset_right = 1052.0
+offset_bottom = 34.0
 
 [node name="Dependencies" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 597.0
-offset_right = 620.0
-offset_bottom = 697.0
+offset_top = 577.0
+offset_right = 128.0
+offset_bottom = 603.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 auto_translate = false
 
 [node name="SettingsInput5" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies"]
-offset_right = 620.0
-offset_bottom = 100.0
+offset_right = 128.0
+offset_bottom = 26.0
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
-minimum_size = Vector2(200, 0)
-offset_top = 37.0
-offset_right = 200.0
-offset_bottom = 63.0
+offset_right = 110.0
+offset_bottom = 26.0
 text = "Dependencies"
 vertical_alignment = 1
 
 [node name="TextEdit" type="TextEdit" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
-minimum_size = Vector2(410, 100)
-offset_left = 210.0
-offset_right = 620.0
-offset_bottom = 100.0
+offset_left = 120.0
+offset_right = 128.0
+offset_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SectionTitle3" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-offset_top = 702.0
-offset_right = 852.0
-offset_bottom = 781.0
+offset_top = 608.0
+offset_right = 1052.0
+offset_bottom = 672.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
-minimum_size = Vector2(0, 10)
-offset_right = 852.0
-offset_bottom = 10.0
+offset_right = 1052.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
-offset_top = 14.0
-offset_right = 852.0
-offset_bottom = 40.0
+offset_top = 4.0
+offset_right = 1052.0
+offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SectionTitle"]
-minimum_size = Vector2(200, 0)
-offset_right = 852.0
+offset_right = 1052.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource( "StyleBoxFlat_ir0s2" )
+theme_override_styles/normal = SubResource("StyleBoxFlat_ir0s2")
 text = "GENERAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
-offset_top = 44.0
-offset_right = 852.0
-offset_bottom = 44.0
+offset_top = 34.0
+offset_right = 1052.0
+offset_bottom = 34.0
 
 [node name="SettingsInput" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
-offset_top = 48.0
-offset_right = 852.0
-offset_bottom = 79.0
+offset_top = 38.0
+offset_right = 1052.0
+offset_bottom = 64.0
 size_flags_vertical = 2
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
-minimum_size = Vector2(200, 0)
-offset_top = 2.0
-offset_right = 200.0
-offset_bottom = 28.0
+offset_right = 62.0
+offset_bottom = 26.0
 text = "Enabled"
 vertical_alignment = 1
 
 [node name="inputs" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
-offset_left = 204.0
-offset_right = 852.0
-offset_bottom = 31.0
+offset_left = 66.0
+offset_right = 1052.0
+offset_bottom = 26.0
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput/inputs"]
 offset_right = 44.0
-offset_bottom = 31.0
+offset_bottom = 26.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 focus_mode = 0
@@ -364,11 +334,10 @@ offset_bottom = 1889.0
 offset_bottom = 1889.0
 
 [node name="VSeparator" type="VSeparator" parent="TabContainer/PROVIDERS/TabContent/MainHBox/RightVerticalSectionSeparator"]
-minimum_size = Vector2(0, 200)
 offset_left = 4.0
-offset_top = 844.0
+offset_top = 943.0
 offset_right = 8.0
-offset_bottom = 1044.0
+offset_bottom = 946.0
 size_flags_vertical = 4
 
 [node name="SETTINGS" type="TabBar" parent="TabContainer"]
@@ -395,7 +364,6 @@ text = "SECTION"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/SETTINGS/SectionTitle"]
-minimum_size = Vector2(200, 0)
 offset_top = 30.0
 offset_right = 200.0
 offset_bottom = 34.0

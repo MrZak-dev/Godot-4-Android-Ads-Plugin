@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://plugin_test_main.gd" id="1_c055v"]
 
 [node name="plugin_test_main" type="Node"]
-script = ExtResource( "1_c055v" )
+script = ExtResource("1_c055v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0

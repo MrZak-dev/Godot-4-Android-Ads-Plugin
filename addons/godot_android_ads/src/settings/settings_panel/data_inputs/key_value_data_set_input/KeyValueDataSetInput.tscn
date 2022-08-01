@@ -10,13 +10,13 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="KeyValueDataSetInput" type="PanelContainer"]
-minimum_size = Vector2(700, 0)
+custom_minimum_size = Vector2(800, 0)
 anchor_right = 1.0
 offset_bottom = 81.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource( "StyleBoxFlat_501mm" )
-script = ExtResource( "1_xtewf" )
+theme_override_styles/panel = SubResource("StyleBoxFlat_501mm")
+script = ExtResource("1_xtewf")
 _inputs_container_path = NodePath("Margin/HBox/VBox")
 _data_set_header = "Interstitial ID"
 _data_set_key_header = "Name"
@@ -25,9 +25,9 @@ _data_set_value_header = "ID"
 [node name="Margin" type="MarginContainer" parent="."]
 offset_right = 1080.0
 offset_bottom = 146.0
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_top = 10
 theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
 [node name="HBox" type="HBoxContainer" parent="Margin"]
@@ -39,14 +39,14 @@ size_flags_vertical = 3
 
 [node name="Header" type="Label" parent="Margin/HBox"]
 unique_name_in_owner = true
-minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(120, 0)
 offset_top = 50.0
-offset_right = 200.0
+offset_right = 120.0
 offset_bottom = 76.0
 text = "Interstitial ID"
 vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Margin/HBox"]
-offset_left = 204.0
-offset_right = 688.0
+offset_left = 124.0
+offset_right = 788.0
 offset_bottom = 126.0

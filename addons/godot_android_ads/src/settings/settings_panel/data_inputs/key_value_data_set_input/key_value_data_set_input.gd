@@ -49,9 +49,9 @@ func set_data(data:Dictionary) -> void:
 
 
 func _set_inputs_container_signals() -> void:
-	_inputs_container.child_entered_tree.connect(
+	_inputs_container.child_exiting_tree.connect(
 		Callable(self, "_on_input_add"))
-	_inputs_container.child_exited_tree.connect(
+	_inputs_container.child_exiting_tree.connect(
 		Callable(self, "_on_input_deleted"))
 
 
