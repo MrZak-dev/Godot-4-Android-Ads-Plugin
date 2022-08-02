@@ -100,7 +100,7 @@ offset_right = 1080.0
 offset_bottom = 1354.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 38
-text = "load admob banner (default)"
+text = "load admob banner (home)"
 
 [node name="show_admob_banner_default" type="Button" parent="VBoxContainer"]
 offset_top = 1358.0
@@ -137,3 +137,18 @@ offset_top = 1810.0
 offset_right = 1080.0
 offset_bottom = 1920.0
 size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/init_admob_btn" to="." method="_on_init_admob_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_interstitial_default" to="." method="_on_load_admob_interstitial_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_interstitial_home" to="." method="_on_load_admob_interstitial_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_interstitial_default" to="." method="_on_show_admob_interstitial_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_interstitial_home" to="." method="_on_show_admob_interstitial_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_rewarded_default" to="." method="_on_load_admob_rewarded_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_rewarded_home" to="." method="_on_load_admob_rewarded_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_rewarded_default" to="." method="_on_show_admob_rewarded_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_rewarded_home" to="." method="_on_show_admob_rewarded_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_banner_default" to="." method="_on_load_admob_banner_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_admob_banner_home" to="." method="_on_load_admob_banner_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_banner_default" to="." method="_on_show_admob_banner_pressed"]
+[connection signal="pressed" from="VBoxContainer/show_admob_banner_home" to="." method="_on_show_admob_banner_home_pressed"]
+[connection signal="pressed" from="VBoxContainer/hide_admob_banner" to="." method="_on_hide_admob_banner_pressed"]
