@@ -2,7 +2,7 @@
 extends HBoxContainer
 class_name KeyValueEdit
 
-signal data_submitted
+signal data_submitted(data:Dictionary, edit:KeyValueEdit)
 
 @export var _key_name : String
 @export var _value_name : String
@@ -52,9 +52,29 @@ func set_data(key_value:Dictionary) -> void:
 	set_value(key_value.values()[0])
 
 
+func is_filled() -> bool:
+	return not get_key().is_empty() and not get_value().is_empty()
+
+
+func set_valid() -> void:
+	key_data_edit.set_valid()
+
+
+func set_invalid() -> void:
+	key_data_edit.set_invalid()
+
+
 func _set_signals() -> void:
-	key_data_edit.text_validated.connect(func(): self.data_submitted.emit())
-	value_data_edit.text_validated.connect(func(): self.data_submitted.emit())
+	key_data_edit.text_validated.connect(
+		func():
+			if is_filled():
+				self.data_submitted.emit(get_data(), self)
+	)
+	value_data_edit.text_validated.connect(
+		func():
+			if is_filled():
+				self.data_submitted.emit(get_data(), self)
+	)
 
 
 # TODO : set_occupied_values

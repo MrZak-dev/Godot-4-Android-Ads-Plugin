@@ -14,18 +14,12 @@ offset_right = 353.0
 [node name="Header" parent="KeyEdit" index="0"]
 offset_right = 353.0
 
-[node name="Edit" parent="KeyEdit" index="1"]
-offset_right = 300.0
-
 [node name="ValueEdit" parent="." index="1"]
 offset_left = 363.0
 offset_right = 716.0
 
 [node name="Header" parent="ValueEdit" index="0"]
 offset_right = 353.0
-
-[node name="Edit" parent="ValueEdit" index="1"]
-offset_right = 300.0
 
 [node name="Actions" type="HBoxContainer" parent="." index="2"]
 offset_left = 726.0

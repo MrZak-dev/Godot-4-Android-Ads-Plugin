@@ -11,9 +11,14 @@ const _input_scn : PackedScene = preload(
 @export var _data_set_key_header : String
 @export var _data_set_value_header : String
 
+var data_set:Dictionary:
+	set(value):
+		data_set = value
+
 @onready var _inputs_container : VBoxContainer = get_node(
 	_inputs_container_path)
 @onready var _set_header_lbl : Label = get_node("%Header")
+
 
 func _ready() -> void:
 	_set_inputs_container_signals()
@@ -31,10 +36,7 @@ func get_data() -> Dictionary:
 	for c in _inputs_container.get_children():
 		var _c : KeyValueEdit = c
 		
-		var key : String = _c.get_key()
-		var value : String = _c.get_value() 
-		
-		if not key.is_empty() and not value.is_empty():
+		if _c.is_filled():
 			data[_c.get_key()] = _c.get_value()
 		
 	return data
@@ -112,5 +114,9 @@ func _on_input_deleted(input: Node) -> void:
 	_set_buttons_visibility()
 
 
-func _on_input_data_submitted() -> void:
+func _on_input_data_submitted(data:Dictionary, edit:KeyValueEdit) -> void:
 	print(await get_data())
+
+
+func _check_key_redundancy() -> void:
+	pass
