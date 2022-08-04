@@ -3,7 +3,7 @@ extends KeyValueEdit
 class_name KeyValueRemovableEdit
 
 signal add_requested
-signal delete_requested
+signal delete_requested(key:String)
 
 @onready var _add_btn : TextureButton = get_node("%AddButton")
 @onready var _delete_btn : TextureButton = get_node("%DeleteButton")
@@ -26,9 +26,9 @@ func _on_add() -> void:
 
 
 func _on_remove() -> void:
+	if is_filled():
+		delete_requested.emit(get_key())
 	queue_free()
-	delete_requested.emit()
-	data_submitted.emit()
 
 
 func _set_signals() -> void:
