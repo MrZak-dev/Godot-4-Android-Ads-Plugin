@@ -32,15 +32,6 @@ func _ready() -> void:
 
 func get_data() -> Dictionary:
 	return data
-#	await get_tree().process_frame # wait for children to be added and removed
-	var data : Dictionary = {}
-	for c in _inputs_container.get_children():
-		var _c : KeyValueEdit = c
-		
-		if _c.is_filled():
-			data[_c.get_key()] = _c.get_value()
-		
-	return data
 
 
 func set_data(data:Dictionary) -> void:
@@ -49,6 +40,26 @@ func set_data(data:Dictionary) -> void:
 	
 	if data.size() == 0 and _inputs_container.get_child_count() == 0:
 		_add_key_value_input()
+	
+	self.data = data
+
+
+func update_data() -> void:
+	await get_tree().process_frame # wait for children to be added and removed
+	var data : Dictionary = {}
+	for c in _inputs_container.get_children():
+		var _c : KeyValueEdit = c
+		
+		if not _c.is_filled():
+			continue
+		
+		if data.keys().has(_c.get_key()):
+			_c.set_invalid()
+			continue
+		
+		data[_c.get_key()] = _c.get_value()
+	
+	self.data = data
 
 
 func _set_inputs_container_signals() -> void:
@@ -116,14 +127,7 @@ func _on_input_deleted(input: Node) -> void:
 	_set_buttons_visibility()
 
 
-func _on_input_data_submitted(_data:Dictionary, edit:KeyValueEdit) -> void:
-	if _data.keys() in data.keys():
-		edit.set_invalid()
-		return
+func _on_input_data_submitted(input_data:Dictionary, edit:KeyValueEdit) -> void:
+	await update_data()
 	
-	data.merge(_data)
 	print(get_data())
-
-
-func _check_key_redundancy() -> void:
-	pass
