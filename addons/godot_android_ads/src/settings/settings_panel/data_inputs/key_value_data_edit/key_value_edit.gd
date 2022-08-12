@@ -7,12 +7,12 @@ signal data_submitted(data:Dictionary, edit:KeyValueEdit)
 @export var _key_name : String
 @export var _value_name : String
 
-var key_name:
+var key_name: String :
 	set(value):
 		key_name = value
 		key_data_edit.header = value
 
-var value_name:
+var value_name: String :
 	set(value):
 		value_name = value
 		value_data_edit.header = value
