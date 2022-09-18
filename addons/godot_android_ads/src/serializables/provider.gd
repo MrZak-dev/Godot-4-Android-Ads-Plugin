@@ -35,7 +35,7 @@ func create_from_dict(data:Dictionary) -> void:
 
 
 static func deserialize(provider_data:Dictionary) -> Serializable:
-	var provider : Provider = dict2inst(provider_data) as Provider
+	var provider : Provider = dict_to_inst(provider_data) as Provider
 	return provider
 
 

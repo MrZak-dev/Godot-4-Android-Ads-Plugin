@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/data_edit.gd" id="1_d1g2r"]
 
 [node name="DataEdit" type="VBoxContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -19,7 +20,7 @@ size_flags_vertical = 3
 
 [node name="Edit" type="LineEdit" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 30)
+custom_minimum_size = Vector2i(300, 30)
 offset_top = 944.0
 offset_right = 300.0
 offset_bottom = 975.0

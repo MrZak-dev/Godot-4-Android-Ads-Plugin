@@ -14,10 +14,14 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="SettingsPanel" type="VBoxContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
 offset_right = 1080.0
 offset_bottom = 1920.0
 size_flags_vertical = 3
@@ -25,13 +29,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j6kx7")
 tab_alignment = 1
 
 [node name="PROVIDERS" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TabContent" type="VBoxContainer" parent="TabContainer/PROVIDERS"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -42,6 +52,7 @@ metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = false
 
 [node name="MainHBox" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent"]
+layout_mode = 2
 offset_right = 1080.0
 offset_bottom = 1889.0
 size_flags_horizontal = 3
@@ -49,26 +60,35 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="ProvidersListContainer" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
+layout_mode = 2
 offset_right = 200.0
 offset_bottom = 1889.0
 
 [node name="ProvidersList" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2i(200, 0)
+layout_mode = 2
+anchors_preset = 0
 offset_right = 200.0
 offset_bottom = 1696.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 90.0
 
 [node name="ItemList" type="ItemList" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ProvidersList"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 item_count = 2
 item_0/text = "ADMOB"
 item_1/text = "UNITY"
 
 [node name="ActionBtns" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer"]
+layout_mode = 2
+anchors_preset = 0
 offset_top = 1700.0
 offset_right = 200.0
 offset_bottom = 1889.0
@@ -76,14 +96,22 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ActionButton" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
+layout_mode = 2
+anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="Button" type="TextureButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton"]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -92,15 +120,21 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 stretch_mode = 4
 
 [node name="ActionButton2" type="Control" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer"]
+layout_mode = 2
+anchors_preset = 0
 offset_left = 4.0
 offset_right = 4.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="Button" type="TextureButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ProvidersListContainer/ActionBtns/HBoxContainer/ActionButton2"]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -109,17 +143,22 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 stretch_mode = 4
 
 [node name="LeftVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
+layout_mode = 2
 offset_left = 204.0
 offset_right = 212.0
 offset_bottom = 1889.0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/LeftVerticalSectionSeparator"]
+layout_mode = 2
 offset_bottom = 1889.0
 
 [node name="VSeparator" type="VSeparator" parent="TabContainer/PROVIDERS/TabContent/MainHBox/LeftVerticalSectionSeparator"]
+layout_mode = 2
 offset_left = 4.0
 offset_top = 943.0
 offset_right = 8.0
@@ -127,6 +166,7 @@ offset_bottom = 946.0
 size_flags_vertical = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
+layout_mode = 2
 offset_left = 216.0
 offset_right = 1068.0
 offset_bottom = 1889.0
@@ -135,25 +175,30 @@ size_flags_vertical = 3
 follow_focus = true
 
 [node name="ProviderSettingsContainer" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer"]
+layout_mode = 2
 offset_right = 852.0
 offset_bottom = 746.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
 [node name="SectionTitle" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_right = 852.0
 offset_bottom = 34.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+layout_mode = 2
 offset_right = 852.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+layout_mode = 2
 offset_top = 4.0
 offset_right = 852.0
 offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle/SectionTitle"]
+layout_mode = 2
 offset_right = 852.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
@@ -163,17 +208,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle"]
+layout_mode = 2
 offset_top = 34.0
 offset_right = 852.0
 offset_bottom = 34.0
 
 [node name="SettingsInput2" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_top = 39.0
 offset_right = 852.0
 offset_bottom = 70.0
 size_flags_vertical = 3
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2"]
+layout_mode = 2
 offset_top = 2.0
 offset_right = 52.0
 offset_bottom = 28.0
@@ -181,57 +229,76 @@ text = "App ID"
 vertical_alignment = 1
 
 [node name="DataEdit" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SettingsInput2" instance=ExtResource("3_si5y5")]
+layout_mode = 2
+anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 56.0
 offset_right = 852.0
 offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_top = 75.0
 offset_right = 852.0
 offset_bottom = 75.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_top = 80.0
 offset_right = 852.0
 offset_bottom = 80.0
 
 [node name="InterstitialKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
+layout_mode = 2
+anchors_preset = 0
 anchor_right = 0.0
 offset_top = 85.0
 offset_right = 800.0
 offset_bottom = 231.0
+grow_horizontal = 2
 
 [node name="RewardedKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
+layout_mode = 2
+anchors_preset = 0
 anchor_right = 0.0
 offset_top = 236.0
 offset_right = 800.0
 offset_bottom = 382.0
+grow_horizontal = 2
 _data_set_header = "Rewarded ID"
 
 [node name="BannerKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
+layout_mode = 2
+anchors_preset = 0
 anchor_right = 0.0
 offset_top = 387.0
 offset_right = 800.0
 offset_bottom = 533.0
+grow_horizontal = 2
 _data_set_header = "Banner ID"
 
 [node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_top = 538.0
 offset_right = 852.0
 offset_bottom = 572.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+layout_mode = 2
 offset_right = 852.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+layout_mode = 2
 offset_top = 4.0
 offset_right = 852.0
 offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2/SectionTitle"]
+layout_mode = 2
 offset_right = 852.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
@@ -241,12 +308,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle2"]
+layout_mode = 2
 offset_top = 34.0
 offset_right = 852.0
 offset_bottom = 34.0
 
 [node name="Dependencies" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
-custom_minimum_size = Vector2(500, 100)
+custom_minimum_size = Vector2i(500, 100)
+layout_mode = 2
 offset_top = 577.0
 offset_right = 500.0
 offset_bottom = 677.0
@@ -254,12 +323,14 @@ size_flags_horizontal = 0
 auto_translate = false
 
 [node name="SettingsInput5" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies"]
+layout_mode = 2
 offset_right = 500.0
 offset_bottom = 100.0
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
+layout_mode = 2
 offset_top = 37.0
 offset_right = 110.0
 offset_bottom = 63.0
@@ -267,6 +338,7 @@ text = "Dependencies"
 vertical_alignment = 1
 
 [node name="TextEdit" type="TextEdit" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/Dependencies/SettingsInput5"]
+layout_mode = 2
 offset_left = 120.0
 offset_right = 500.0
 offset_bottom = 100.0
@@ -274,20 +346,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SectionTitle3" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
+layout_mode = 2
 offset_top = 682.0
 offset_right = 852.0
 offset_bottom = 746.0
 
 [node name="TopMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+layout_mode = 2
 offset_right = 852.0
 
 [node name="SectionTitle" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+layout_mode = 2
 offset_top = 4.0
 offset_right = 852.0
 offset_bottom = 30.0
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SectionTitle"]
+layout_mode = 2
 offset_right = 852.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
@@ -297,23 +373,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomMargin" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+layout_mode = 2
 offset_top = 34.0
 offset_right = 852.0
 offset_bottom = 34.0
 
 [node name="SettingsInput" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3"]
+layout_mode = 2
 offset_top = 38.0
 offset_right = 852.0
 offset_bottom = 64.0
 size_flags_vertical = 2
 
 [node name="Header" type="Label" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
+layout_mode = 2
 offset_right = 62.0
 offset_bottom = 26.0
 text = "Enabled"
 vertical_alignment = 1
 
 [node name="inputs" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput"]
+layout_mode = 2
 offset_left = 66.0
 offset_right = 852.0
 offset_bottom = 26.0
@@ -321,6 +401,7 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer/SectionTitle3/SettingsInput/inputs"]
+layout_mode = 2
 offset_right = 44.0
 offset_bottom = 26.0
 size_flags_horizontal = 0
@@ -331,14 +412,17 @@ alignment = 1
 icon_alignment = 1
 
 [node name="RightVerticalSectionSeparator" type="HBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox"]
+layout_mode = 2
 offset_left = 1072.0
 offset_right = 1080.0
 offset_bottom = 1889.0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/RightVerticalSectionSeparator"]
+layout_mode = 2
 offset_bottom = 1889.0
 
 [node name="VSeparator" type="VSeparator" parent="TabContainer/PROVIDERS/TabContent/MainHBox/RightVerticalSectionSeparator"]
+layout_mode = 2
 offset_left = 4.0
 offset_top = 943.0
 offset_right = 8.0
@@ -347,15 +431,24 @@ size_flags_vertical = 4
 
 [node name="SETTINGS" type="TabBar" parent="TabContainer"]
 visible = false
+layout_mode = 2
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TabContent" type="VBoxContainer" parent="TabContainer/SETTINGS"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SectionTitle" type="VBoxContainer" parent="TabContainer/SETTINGS"]
+layout_mode = 0
 offset_left = 880.0
 offset_right = 1080.0
 offset_bottom = 34.0
@@ -363,12 +456,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Title" type="Label" parent="TabContainer/SETTINGS/SectionTitle"]
+layout_mode = 2
 offset_right = 200.0
 offset_bottom = 26.0
 text = "SECTION"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/SETTINGS/SectionTitle"]
+layout_mode = 2
 offset_top = 30.0
 offset_right = 200.0
 offset_bottom = 34.0

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://egqx5aookpsm" path="res://addons/godot_android_ads/src/settings/settings_panel/data_inputs/data_edit/DataEdit.tscn" id="2_n0vio"]
 
 [node name="KeyValueEdit" type="HBoxContainer"]
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.032
 offset_bottom = -0.440002
@@ -28,6 +29,7 @@ offset_bottom = 26.0
 text = "Key"
 
 [node name="Edit" parent="KeyEdit" index="1"]
+custom_minimum_size = Vector2i(300, 30)
 offset_top = 30.0
 offset_bottom = 61.0
 size_flags_vertical = 3
@@ -48,6 +50,7 @@ offset_bottom = 26.0
 text = "Value"
 
 [node name="Edit" parent="ValueEdit" index="1"]
+custom_minimum_size = Vector2i(300, 30)
 offset_top = 30.0
 offset_bottom = 61.0
 

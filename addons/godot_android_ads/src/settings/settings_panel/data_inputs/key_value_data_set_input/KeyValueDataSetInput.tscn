@@ -10,7 +10,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="KeyValueDataSetInput" type="PanelContainer"]
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2i(800, 0)
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 81.0
 size_flags_horizontal = 0
@@ -39,7 +40,7 @@ size_flags_vertical = 3
 
 [node name="Header" type="Label" parent="Margin/HBox"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2i(120, 0)
 offset_top = 50.0
 offset_right = 120.0
 offset_bottom = 76.0

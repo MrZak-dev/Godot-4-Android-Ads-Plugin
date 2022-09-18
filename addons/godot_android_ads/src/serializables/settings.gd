@@ -21,7 +21,7 @@ func serialize() -> Dictionary:
 
 
 static func deserialize(settings_data:Dictionary) -> Serializable:
-	var settings : Settings = dict2inst(settings_data)
+	var settings : Settings = dict_to_inst(settings_data)
 	return settings
 
 

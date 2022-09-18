@@ -56,6 +56,8 @@ func update_data() -> void:
 		if data.keys().has(_c.get_key()):
 			_c.set_invalid()
 			continue
+		else:
+			_c.set_valid()
 		
 		data[_c.get_key()] = _c.get_value()
 	
@@ -124,6 +126,7 @@ func _on_input_add(input: Node) -> void:
 
 
 func _on_input_deleted(input: Node) -> void:
+	await update_data()
 	_set_buttons_visibility()
 
 
