@@ -236,8 +236,6 @@ anchor_bottom = 0.0
 offset_left = 56.0
 offset_right = 852.0
 offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]
 layout_mode = 2
@@ -258,7 +256,6 @@ anchor_right = 0.0
 offset_top = 85.0
 offset_right = 800.0
 offset_bottom = 231.0
-grow_horizontal = 2
 
 [node name="RewardedKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
 layout_mode = 2
@@ -267,7 +264,6 @@ anchor_right = 0.0
 offset_top = 236.0
 offset_right = 800.0
 offset_bottom = 382.0
-grow_horizontal = 2
 _data_set_header = "Rewarded ID"
 
 [node name="BannerKeyValueInput" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer" instance=ExtResource("4_wbweu")]
@@ -277,7 +273,6 @@ anchor_right = 0.0
 offset_top = 387.0
 offset_right = 800.0
 offset_bottom = 533.0
-grow_horizontal = 2
 _data_set_header = "Banner ID"
 
 [node name="SectionTitle2" type="VBoxContainer" parent="TabContainer/PROVIDERS/TabContent/MainHBox/ScrollContainer/ProviderSettingsContainer"]

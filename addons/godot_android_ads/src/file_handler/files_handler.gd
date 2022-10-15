@@ -3,13 +3,11 @@ class_name FileHandler
 
 ## Read from a file 
 static func file_read(path:String) -> String:
-	var file_rw : File = File.new()
-	
-	if file_rw.file_exists(path):
+	if FileAccess.file_exists(path):
 		
-		file_rw.open(path, File.READ)
-		var file_text = file_rw.get_as_text()
-		file_rw.close()
+		var file = FileAccess.open(path, FileAccess.READ)
+		var file_text = file.get_as_text()
+		file = null
 		
 		return file_text
 	
@@ -19,8 +17,8 @@ static func file_read(path:String) -> String:
 
 ## Save text to a file (overwrite existing text)
 static func file_write(path:String, text:String) -> void:
-	var file_rw : File = File.new()
+	var file_rw : FileAccess = FileAccess.new()
 	
-	file_rw.open(path, File.WRITE)
-	file_rw.store_string(text)
-	file_rw.close()
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string(text)
+	file = null

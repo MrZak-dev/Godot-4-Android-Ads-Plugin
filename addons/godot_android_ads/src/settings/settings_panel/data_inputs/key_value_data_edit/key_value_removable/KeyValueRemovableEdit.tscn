@@ -6,27 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://r8olt2ab4p8s" path="res://addons/godot_android_ads/assets/icons/plus.svg" id="4_bvexd"]
 
 [node name="KeyValueRemovableEdit" instance=ExtResource("1_sg4gr")]
-anchors_preset = -1
 script = ExtResource("1_f1yc8")
 
 [node name="KeyEdit" parent="." index="0"]
+anchors_preset = 0
 offset_right = 353.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Header" parent="KeyEdit" index="0"]
 offset_right = 353.0
 
-[node name="Edit" parent="KeyEdit" index="1"]
-custom_minimum_size = Vector2i(300, 30)
-
 [node name="ValueEdit" parent="." index="1"]
+anchors_preset = 0
 offset_left = 363.0
 offset_right = 716.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Header" parent="ValueEdit" index="0"]
 offset_right = 353.0
-
-[node name="Edit" parent="ValueEdit" index="1"]
-custom_minimum_size = Vector2i(300, 30)
 
 [node name="Actions" type="HBoxContainer" parent="." index="2"]
 offset_left = 726.0
@@ -56,6 +55,8 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_ru8oa")
 texture_pressed = ExtResource("3_ru8oa")
 texture_hover = ExtResource("3_ru8oa")
@@ -85,6 +86,8 @@ offset_left = -7.5
 offset_top = -7.5
 offset_right = 7.5
 offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("4_bvexd")
 texture_pressed = ExtResource("4_bvexd")
 texture_hover = ExtResource("4_bvexd")
